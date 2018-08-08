@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour {
+public class LookAtDemo : MonoBehaviour {
 
+    public Transform target;
 	// Use this for initialization
 	void Start () {
 		
@@ -11,6 +12,7 @@ public class NewBehaviourScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+        transform.LookAt(target);
 	}
 }

@@ -29,11 +29,11 @@ public class MoveDemo : MonoBehaviour {
         }
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            transform.Rotate(Vector3.forward, turnSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up, turnSpeed * Time.deltaTime);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            transform.Rotate(Vector3.forward, -turnSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.up, -turnSpeed * Time.deltaTime);
         }
     }
 }
