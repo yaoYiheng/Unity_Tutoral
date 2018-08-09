@@ -113,6 +113,7 @@
     <Compile Include="Assets\Scripts\MoveTowardsTest.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\MyScript.cs" />
+    <Compile Include="Assets\Scripts\QuaternionDemo.cs" />
     <Compile Include="Assets\Scripts\RotateDemo.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
   </ItemGroup>

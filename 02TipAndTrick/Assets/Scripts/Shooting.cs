@@ -26,7 +26,6 @@ public class Shooting : MonoBehaviour {
     {
         Rigidbody shellIns = Instantiate(shell, firpos.position, shell.rotation) as Rigidbody;
 
-        //Vector3 fire = firpos.forward * speed;
         shellIns.AddForce(firpos.forward * speed);
 
     }
