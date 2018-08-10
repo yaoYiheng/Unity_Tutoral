@@ -117,6 +117,7 @@
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\MyScript.cs" />
     <Compile Include="Assets\Scripts\ObjectBuilderDemo.cs" />
+    <Compile Include="Assets\Scripts\Projectile.cs" />
     <Compile Include="Assets\Scripts\QuaternionDemo.cs" />
     <Compile Include="Assets\Scripts\RotateDemo.cs" />
     <Compile Include="Assets\Scripts\Shooting.cs" />
