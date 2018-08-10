@@ -1,9 +1,8 @@
 ﻿<Properties StartupConfiguration="{B1B78201-2208-DB9C-612C-8F9EC9B2DE3D}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/RotateDemo.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/ColorChange.cs">
     <Files>
-      <File FileName="Assets/Scripts/QuaternionDemo.cs" Line="11" Column="1" />
-      <File FileName="Assets/Scripts/LookAtDemo.cs" Line="15" Column="1" />
-      <File FileName="Assets/Scripts/RotateDemo.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/EventManger.cs" Line="12" Column="80" />
+      <File FileName="Assets/Scripts/ColorChange.cs" Line="17" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
