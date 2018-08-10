@@ -8,6 +8,8 @@ public class LevelDemo : MonoBehaviour {
 
     public int experience;
 
+    public Vector3 Vector3;
+    public bool isDead;
 
     public int Level
     {
