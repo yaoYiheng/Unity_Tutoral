@@ -162,6 +162,7 @@
   <ItemGroup>
     <Compile Include="Assets\Editor\BuilderDemoEditor.cs" />
     <Compile Include="Assets\Editor\LevelDemoEditor.cs" />
+    <Compile Include="Assets\Editor\ProjectileEditor.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

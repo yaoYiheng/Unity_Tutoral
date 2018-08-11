@@ -32,6 +32,7 @@ public class ColorChange : MonoBehaviour
  
     }
 
+    //设置为在EventManager
     private void Start()
     {
         meshFilter = this.GetComponent<MeshRenderer>();

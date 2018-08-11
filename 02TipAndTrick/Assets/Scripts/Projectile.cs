@@ -7,18 +7,15 @@ public class Projectile : MonoBehaviour {
 
 
     [HideInInspector]public Rigidbody rig;
-
+    public float damageRadius = 1;
     private void Reset()
     {
         rig = GetComponent<Rigidbody>();
     }
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [ContextMenu("Do Something")]
+    void DoSomething()
+    {
+        Debug.Log("Perform operation");
+    }
+
 }
