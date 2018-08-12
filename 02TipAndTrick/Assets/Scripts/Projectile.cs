@@ -12,7 +12,8 @@ public class Projectile : MonoBehaviour {
     {
         rig = GetComponent<Rigidbody>();
     }
-    [ContextMenu("Do Something")]
+
+    [ContextMenu("Do Something")] 
     void DoSomething()
     {
         Debug.Log("Perform operation");
