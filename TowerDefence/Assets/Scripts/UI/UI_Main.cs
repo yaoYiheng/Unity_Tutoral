@@ -33,7 +33,17 @@ public class UI_Main : MonoBehaviour
         Button button_Close = transform.Find("Button_Close").GetComponent<Button>();
         button_Close.onClick.AddListener(() =>
         {
-            Destroy(gameObject);
+            UIManager.ExitUI(this);
+        });
+        Button button_Close_All = transform.Find("Button_Close_All").GetComponent<Button>();
+        button_Close_All.onClick.AddListener(() =>
+        {
+            UIManager.ExitAllUI();
+        });
+        Button button_Show = transform.Find("Button_Show").GetComponent<Button>();
+        button_Show.onClick.AddListener(() =>
+        {
+            UIManager.EnterUI<UI_Main>();
         });
     }
 }
