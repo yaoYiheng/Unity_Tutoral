@@ -29,5 +29,11 @@ public class UI_Main : MonoBehaviour
         {
             Debug.Log("点击");
         });
+
+        Button button_Close = transform.Find("Button_Close").GetComponent<Button>();
+        button_Close.onClick.AddListener(() =>
+        {
+            Destroy(gameObject);
+        });
     }
 }
