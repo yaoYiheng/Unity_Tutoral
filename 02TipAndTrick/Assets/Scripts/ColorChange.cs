@@ -36,5 +36,7 @@ public class ColorChange : MonoBehaviour
     private void Start()
     {
         meshFilter = this.GetComponent<MeshRenderer>();
+
+        Debug.Log(Resources.Load<GameObject>("Assets/Prefabs/Shell"));
     }
 }
