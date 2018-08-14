@@ -19,26 +19,16 @@ public class DrawPath : MonoBehaviour
         {
             Gizmos.DrawCube(m_MapList[0], new Vector3(0.95f, 0.95f, 0.95f));
         }
-        //Gizmos.color = Color.magenta;
+        Gizmos.color = Color.white;
+        //第一个点的坐标的
         int _x, _z;
         for (int i = 1; i < m_MapList.Count;i++)
         {
             _x = (int)m_MapList[i - 1].x;
             _z = (int)m_MapList[i - 1].z;
-            //实现的目标是有第一个点向第二个点的方向绘制
+             //实现的目标是有第一个点向第二个点的方向绘制
             //如果第一个点的x值大于第二个点的x, 说明第一个点在第二个点的右边,
             //绘制需要每次减小x的值. 
-
-            while (_z > m_MapList[i].z)
-            {
-                _z--;
-                Gizmos.DrawCube(new Vector3(_x, 0, _z), new Vector3(0.95f, 0.95f, 0.95f));
-            }
-            while (_z < m_MapList[i].z)
-            {
-                _z++;
-                Gizmos.DrawCube(new Vector3(_x, 0, _z), new Vector3(0.95f, 0.95f, 0.95f));
-            }
             while(_x > m_MapList[i].x)
             {
                 _x--;
@@ -51,6 +41,24 @@ public class DrawPath : MonoBehaviour
                 Gizmos.DrawCube(new Vector3(_x, 0, _z), new Vector3(0.95f, 0.95f, 0.95f));
             }
 
+            while (_z > m_MapList[i].z)
+            {
+                _z--;
+                Gizmos.DrawCube(new Vector3(_x, 0, _z), new Vector3(0.95f, 0.95f, 0.95f));
+            }
+            while (_z < m_MapList[i].z)
+            {
+                _z++;
+                Gizmos.DrawCube(new Vector3(_x, 0, _z), new Vector3(0.95f, 0.95f, 0.95f));
+            }
+        }
+        Gizmos.color = Color.yellow;
+        //绘制最后一个点的颜色为黄色
+        //列表的最后一个点 == mapList[列表长度 - 1]所表示的那个点.
+        if(m_MapList.Count > 0)
+        {
+
+            Gizmos.DrawCube(m_MapList[m_MapList.Count - 1], new Vector3(0.95f, 0.95f, 0.95f));
         }
 
     }
