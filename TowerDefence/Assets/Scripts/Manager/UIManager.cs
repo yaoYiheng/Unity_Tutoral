@@ -45,6 +45,7 @@ public class UIManager : MonoBehaviour
 
 
         T t = ui_Main.AddComponent<T>();
+
         m_UIList.Add(t);
 
         return t;
