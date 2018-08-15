@@ -15,7 +15,7 @@ public class UIManager : MonoBehaviour
         m_UICanvas = GameObject.Find("Canvas");
     }
 
-    public static T EnterUI<T>() where T : MonoBehaviour 
+    public static T EnterUI<T>() where T : UILayer 
     {
         if(m_UICanvas == null)
         {
@@ -45,7 +45,8 @@ public class UIManager : MonoBehaviour
 
 
         T t = ui_Main.AddComponent<T>();
-
+        t.__init_node(t.transform);
+        t.OnNodeLoad();
         m_UIList.Add(t);
 
         return t;

@@ -8,7 +8,19 @@ public class UI_Main : UILayer
     public Text m_TextTitle;
     public Button m_ButtonStart;
 
-
+    public override void OnNodeLoad()
+    {
+        base.OnNodeLoad();
+        m_TextTitle.text = "3D塔防练习";
+    }
+    public override void OnEnter()
+    {
+        base.OnEnter();
+    }
+    public override void OnExit()
+    {
+        base.OnExit();
+    }
     public override void OnNodeAsset(string name, GameObject gameObject)
     {
         switch (name)
@@ -31,7 +43,7 @@ public class UI_Main : UILayer
         switch (name)
         {
             case "Button_Close":
-                UIManager.ExitUI(this);
+                Close();
                 break;
             
             case "Button_Close_All":

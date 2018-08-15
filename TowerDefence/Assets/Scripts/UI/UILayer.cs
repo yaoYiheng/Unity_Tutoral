@@ -8,8 +8,15 @@ public class UILayer : MonoBehaviour
     /// 相关初始化
     private void Start()
     {
-        this.__init_node(transform);
-
+        OnEnter();
+    }
+    private void OnDestroy()
+    {
+        OnExit();
+    }
+    public void Close()
+    {
+        UIManager.ExitUI(this);
     }
     public void __init_node(Transform transform)
     {
@@ -27,7 +34,18 @@ public class UILayer : MonoBehaviour
             this.__init_node(transform.GetChild(i));
         }
     }
+    public virtual void OnNodeLoad()
+    {
+        
+    }
+    public virtual void OnEnter()
+    {
 
+    }
+    public virtual void OnExit()
+    {
+
+    }
     public virtual void OnNodeAsset(string name, GameObject gameObject)
     {
 
