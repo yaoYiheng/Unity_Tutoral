@@ -57,7 +57,6 @@ public class DrawPath : MonoBehaviour
         //列表的最后一个点 == mapList[列表长度 - 1]所表示的那个点.
         if(m_MapList.Count > 0)
         {
-
             Gizmos.DrawCube(m_MapList[m_MapList.Count - 1], new Vector3(0.95f, 0.95f, 0.95f));
         }
 

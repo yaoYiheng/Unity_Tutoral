@@ -5,7 +5,7 @@
       <File FileName="Assets/Scripts/Manager/UIManager.cs" Line="18" Column="57" />
       <File FileName="Assets/Scripts/UI/UI_Main.cs" Line="11" Column="1" />
       <File FileName="Assets/Scripts/UI/UILayer.cs" Line="8" Column="14" />
-      <File FileName="Assets/Scripts/DrawPath.cs" Line="7" Column="5" />
+      <File FileName="Assets/Scripts/DrawPath.cs" Line="63" Column="6" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

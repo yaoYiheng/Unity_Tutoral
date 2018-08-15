@@ -8,12 +8,7 @@ public class UI_Main : UILayer
     public Text m_TextTitle;
     public Button m_ButtonStart;
 
-    /// 相关初始化
-    private void Start()
-    {
-        this.__init_node(transform);
 
-    }
     public override void OnNodeAsset(string name, GameObject gameObject)
     {
         switch (name)
