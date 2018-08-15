@@ -66,6 +66,14 @@ public class DrawPath : MonoBehaviour
 
     private void Update()
     {
+        MouseInput();
+        MoveCamera();
+
+    }
+
+    //通过鼠标实现添加, 删除路径, 以及滚轮实现缩放.
+    private void MouseInput()
+    {
         //实现通过鼠标点击绘制地图
         //接受输入
         if (Input.GetMouseButtonDown(0))//点击左键
@@ -88,18 +96,18 @@ public class DrawPath : MonoBehaviour
         }
 
         //实现右键点击, 撤销上一步操作
-        if(Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1))
         {
-            if(m_MapList.Count > 0)
+            if (m_MapList.Count > 0)
             {
                 m_MapList.RemoveAt(m_MapList.Count - 1);
             }
         }
 
-        if(Input.GetAxis("Mouse ScrollWheel") > 0)//向下滑动鼠标滚轮时, 大于0, 视野变小
+        if (Input.GetAxis("Mouse ScrollWheel") > 0)//向下滑动鼠标滚轮时, 大于0, 视野变小
         {
             //向下滚动时, zoomin
-            if(Camera.main.orthographicSize * 0.9  < m_MinZoomSize)
+            if (Camera.main.orthographicSize * 0.9 < m_MinZoomSize)
             {
                 Camera.main.orthographicSize = m_MinZoomSize;
             }
@@ -120,6 +128,35 @@ public class DrawPath : MonoBehaviour
             {
                 Camera.main.orthographicSize *= 1.1f;
             }
+        }
+    }
+
+    //移动摄像机的位置
+    private void MoveCamera()
+    {
+        if(Input.GetKey(KeyCode.A))
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            cameraPos.x -= 2;
+            Camera.main.transform.position = cameraPos;
+        }
+        if (Input.GetKey(KeyCode.D))
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            cameraPos.x += 1;
+            Camera.main.transform.position = cameraPos;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            cameraPos.z -= 1;
+            Camera.main.transform.position = cameraPos;
+        }
+        if (Input.GetKey(KeyCode.S))
+        {
+            Vector3 cameraPos = Camera.main.transform.position;
+            cameraPos.z += 1;
+            Camera.main.transform.position = cameraPos;
         }
     }
 }
