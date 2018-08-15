@@ -44,6 +44,11 @@ public class UI_Main : UILayer
 
             case"Button_Start":
                 Debug.Log("游戏开始");
+                List<Vector3 > pos = MapsManager.GetPath("1");
+                for (int i = 0; i < pos.Capacity;i++)
+                {
+                    print(pos[i]);
+                }
                 break;
 
             default:
