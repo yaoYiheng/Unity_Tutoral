@@ -5,6 +5,8 @@ using UnityEngine;
 public class DrawPath : MonoBehaviour 
 {
     public List<Vector3> m_MapList = new List<Vector3>();
+    public float m_MaxZoomSize = 12f;
+    public float m_MinZoomSize = 6f;
 
     private void Start()
     {
@@ -60,5 +62,64 @@ public class DrawPath : MonoBehaviour
             Gizmos.DrawCube(m_MapList[m_MapList.Count - 1], new Vector3(0.95f, 0.95f, 0.95f));
         }
 
+    }
+
+    private void Update()
+    {
+        //实现通过鼠标点击绘制地图
+        //接受输入
+        if (Input.GetMouseButtonDown(0))//点击左键
+        {
+            //将鼠标所点击的位置换成世界坐标
+            Vector3 mousePos = Input.mousePosition;
+            //因为摄像机距离地面有10的距离, 需要设置到z轴上
+            //Z的位置是以世界单位衡量的到相机的距离
+            mousePos.z = 10;
+            //将摄像机的屏幕坐标转换成世界坐标
+            mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+
+            //将坐标进行整数化, 
+            //Mathf.Round  可以将浮点数转换成离它最近的整数
+            mousePos.x = Mathf.Round(mousePos.x);
+            mousePos.z = Mathf.Round(mousePos.z);
+
+            //将该点添加到列表中
+            m_MapList.Add(mousePos);
+        }
+
+        //实现右键点击, 撤销上一步操作
+        if(Input.GetMouseButtonDown(1))
+        {
+            if(m_MapList.Count > 0)
+            {
+                m_MapList.RemoveAt(m_MapList.Count - 1);
+            }
+        }
+
+        if(Input.GetAxis("Mouse ScrollWheel") > 0)//向下滑动鼠标滚轮时, 大于0, 视野变小
+        {
+            //向下滚动时, zoomin
+            if(Camera.main.orthographicSize * 0.9  < m_MinZoomSize)
+            {
+                Camera.main.orthographicSize = m_MinZoomSize;
+            }
+            else
+            {
+                Camera.main.orthographicSize *= 0.9f;
+            }
+
+        }
+        if (Input.GetAxis("Mouse ScrollWheel") < 0)//向上滑动鼠标滚轮时, 小于0, 视野变大
+        {
+            //向下滚动时, zoomin
+            if (Camera.main.orthographicSize * 1.1 > m_MaxZoomSize)
+            {
+                Camera.main.orthographicSize = m_MaxZoomSize;
+            }
+            else
+            {
+                Camera.main.orthographicSize *= 1.1f;
+            }
+        }
     }
 }
