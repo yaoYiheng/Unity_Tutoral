@@ -1,7 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Text;
+using UnityEditor;
+using System;
+using System.IO;
 public class DrawPath : MonoBehaviour 
 {
     public List<Vector3> m_MapList = new List<Vector3>();
@@ -69,6 +72,26 @@ public class DrawPath : MonoBehaviour
         MouseInput();
         MoveCamera();
 
+        //将添加完的点, 写入到文件
+        if(Input.GetKeyDown(KeyCode.F13))
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+
+            for (int i = 0; i < m_MapList.Count; i++)
+            {
+                print(m_MapList[i].x);
+                print(m_MapList[i].z);
+                //先通过string.Format方法将需要的坐标点拼接成(x,y)形式
+                //在将(x,y)通过stringBuilder.AppendLine方法添加成一行行的string
+                stringBuilder.AppendLine(string.Format("{0},{1}", m_MapList[i].x, m_MapList[i].z));
+            }
+            print(stringBuilder.ToString());
+
+            string filePath = EditorUtility.SaveFilePanel("SaveMapFile", ".", DateTime.Now.ToString("yyyyMMddHHmm"), "txt");
+
+
+            File.WriteAllText(filePath, stringBuilder.ToString());
+        }
     }
 
     //通过鼠标实现添加, 删除路径, 以及滚轮实现缩放.
@@ -104,6 +127,8 @@ public class DrawPath : MonoBehaviour
             }
         }
 
+
+        //滚轮实现缩放
         if (Input.GetAxis("Mouse ScrollWheel") > 0)//向下滑动鼠标滚轮时, 大于0, 视野变小
         {
             //向下滚动时, zoomin
