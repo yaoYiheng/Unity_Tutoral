@@ -10,8 +10,6 @@ public class EnemyManager :MonoBehaviour
     {
         GameObject obj = Resources.Load<GameObject>(EnemyPath + model_name);
 
-        string s = EnemyPath + model_name;
-
         GameObject enemyObj = Instantiate(obj) as GameObject;
 
 

@@ -58,7 +58,7 @@ public class UI_Main : UILayer
                 Debug.Log("游戏开始");
                 Close();
                 UIManager.EnterUI<UI_Battle>();
-                List<Vector3 > pos = MapsManager.GetPath("1");
+
                 break;
 
             default:
