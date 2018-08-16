@@ -16,6 +16,8 @@ public class Main : MonoBehaviour
 
     private void Start()
     {
+                //找到地图, 初始化地图管理者
+        MapsManager.m_MapObj = GameObject.Find("map");
    /*
                 //从资源中找到刚刚制作好的UI_Main文件
                 GameObject resource = Resources.Load<GameObject>("UI_Prefab/UI_Main");
@@ -43,5 +45,7 @@ public class Main : MonoBehaviour
                 ui_Main.AddComponent<UI_Main>();
         */
         UIManager.EnterUI<UI_Main>();
+
+
     }
 }

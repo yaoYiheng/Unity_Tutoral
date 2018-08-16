@@ -2,15 +2,20 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyManager : MonoBehaviour {
+public class EnemyManager :MonoBehaviour
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public const string EnemyPath = "Model/Role/";
+    public static GameObject CreatEnemy(string model_name)
+    {
+        GameObject obj = Resources.Load<GameObject>(EnemyPath + model_name);
+
+        string s = EnemyPath + model_name;
+
+        GameObject enemyObj = Instantiate(obj) as GameObject;
+
+
+        return enemyObj;
+            
+    }
 }

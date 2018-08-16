@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MapsManager
+public static class MapsManager
 {
-    private static string filePath = "Maps/";
+    public static GameObject m_MapObj;
+    private const string filePath = "Maps/";
+
+
     public static List<Vector3> GetPath(string mapName)
     {
         //从资源文件夹中获取之前保存的地图文件
@@ -25,6 +28,7 @@ public class MapsManager
             //Debug.Log(pos_Str[i]);
             pos_xz = pos_Str[i].Split(',');
             //将单个的一组坐标的x,z值放入一个数组中. 再将x, z值组成一个v3并加入到List
+            //int.Parse()将字符串所表示的数值转换成int类型的数
             list.Add(new Vector3(int.Parse(pos_xz[0]), 0, int.Parse(pos_xz[1])));
 
         }
