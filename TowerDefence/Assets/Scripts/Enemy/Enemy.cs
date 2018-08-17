@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour {
 
     private float lifeTime = 1f;
     private Animation anim;
+
     public void InitData(List<Vector3> path){
         m_EnemyPath.AddRange(path);
         if(m_EnemyPath.Count >0)
@@ -23,7 +24,7 @@ public class Enemy : MonoBehaviour {
         anim.PlayQueued("RunFront", QueueMode.PlayNow);
     }
 
-    private void Update()
+    public void BattleUpdate()
     {
         //如果有当前点
         if(m_EnemyPath.Count > 0)
@@ -74,11 +75,16 @@ public class Enemy : MonoBehaviour {
             else
             {
                 transform.localPosition = Vector3.Lerp(transform.localPosition, pos, Time.deltaTime / time);
+ 
+
             }
         }
-        else//敌人走到终点就删除
+        else//敌人走到终点就删除 同时完成一次进攻
         {
             DestroyObj();  
+            BattleManager.EnemyAttack();
+             print("..");
+
         }
     }
 

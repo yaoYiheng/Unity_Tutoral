@@ -1,15 +1,20 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class UI_Battle : UILayer 
 {
+    public Text lifeText;
 
     private int enemyAmout = 10;
 
     private void Update()
     {
         BattleManager.BattleUpdate();
+    }
+    public void RefreshLife ()
+    {
+        lifeText.text = string.Format("剩余生命值: {0}", BattleManager.m_HomeLife);
     }
     public override void OnNodeLoad()
     {
@@ -19,7 +24,11 @@ public class UI_Battle : UILayer
         ////创建怪物
         //Enemy enemy_obj = EnemyManager.CreatEnemy(BattleManager.mPathList ,"Warrior");
 
-        BattleManager.InitData(MapsManager.GetPath("1"), enemyAmout);
+        BattleManager.InitData(this, MapsManager.GetPath("1"), enemyAmout);
+
+        //刷新生命
+        RefreshLife();
+
 
     }
     public override void OnEnter()
@@ -37,6 +46,12 @@ public class UI_Battle : UILayer
 
     public override void OnNodeAsset(string name, GameObject gameObject)
     {
-        base.OnNodeAsset(name, gameObject);
+        switch(name)
+        {
+            case "Life_Text":
+                lifeText = gameObject.GetComponent<Text>();
+                break;
+                
+        }
     }
 }
