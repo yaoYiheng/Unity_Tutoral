@@ -1,14 +1,15 @@
 ﻿<Properties StartupConfiguration="{F4849787-9D43-3104-EEB3-247690337ABA}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/MapsManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Manager/BattleManager.cs">
     <Files>
       <File FileName="Assets/Scripts/Main.cs" Line="20" Column="55" />
       <File FileName="Assets/Scripts/Manager/UIManager.cs" Line="26" Column="41" />
       <File FileName="Assets/Scripts/UI/UI_Main.cs" Line="60" Column="1" />
       <File FileName="Assets/Scripts/DrawPath.cs" Line="93" Column="30" />
-      <File FileName="Assets/Scripts/Manager/MapsManager.cs" Line="44" Column="2" />
+      <File FileName="Assets/Scripts/Manager/MapsManager.cs" Line="81" Column="46" />
       <File FileName="Assets/Scripts/Manager/EnemyManager.cs" Line="11" Column="77" />
       <File FileName="Assets/Scripts/UI/UI_Battle.cs" Line="12" Column="1" />
       <File FileName="Assets/Scripts/Enemy/Enemy.cs" Line="19" Column="37" />
+      <File FileName="Assets/Scripts/Manager/BattleManager.cs" Line="7" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

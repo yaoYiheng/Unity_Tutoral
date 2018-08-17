@@ -90,7 +90,9 @@
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
 'Assets/Scripts/DrawPath.cs'
+'Assets/Scripts/Enemy/Enemy.cs'
 'Assets/Scripts/Main.cs'
+'Assets/Scripts/Manager/BattleManager.cs'
 'Assets/Scripts/Manager/EnemyManager.cs'
 'Assets/Scripts/Manager/MapsManager.cs'
 'Assets/Scripts/Manager/UIManager.cs'

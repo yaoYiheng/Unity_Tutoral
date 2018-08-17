@@ -4,20 +4,22 @@ using UnityEngine;
 
 public class UI_Battle : UILayer 
 {
-    //用于保存地图路径
-    public List<Vector3> mPathList;
 
+    private int enemyAmout = 10;
+
+    private void Update()
+    {
+        BattleManager.BattleUpdate();
+    }
     public override void OnNodeLoad()
     {
         MapsManager.m_MapObj.transform.localPosition = Vector3.zero;
-        mPathList = MapsManager.GetPath("1");
+        //BattleManager.mPathList = MapsManager.GetPath("1");
 
-        //创建怪物
-        GameObject enemy_obj = EnemyManager.CreatEnemy("Warrior");
+        ////创建怪物
+        //Enemy enemy_obj = EnemyManager.CreatEnemy(BattleManager.mPathList ,"Warrior");
 
-        Enemy enemy = enemy_obj.AddComponent<Enemy>();
-        enemy.InitData(mPathList);
-         
+        BattleManager.InitData(MapsManager.GetPath("1"), enemyAmout);
 
     }
     public override void OnEnter()
