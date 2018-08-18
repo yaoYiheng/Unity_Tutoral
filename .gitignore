@@ -3,3 +3,14 @@
 *.png
 *.log
 *.asset
+*.xml
+*.ide-wal
+*.meta
+*.ide
+*.lock
+*.csproj
+*.ide-shm
+*.info
+*.dll
+*.mdb
+*.log
