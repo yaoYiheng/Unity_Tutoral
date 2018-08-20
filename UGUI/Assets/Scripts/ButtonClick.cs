@@ -25,7 +25,8 @@ public class ButtonClick : MonoBehaviour {
         if(imageA != null)
         {
             RectTransform rect = imageA.rectTransform;
-            rect.SetAsLastSibling();
+            rect.SetAsLastSibling();//覆盖在所有的UI之上
+
         }
     }
 }
