@@ -1,7 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class LoadImage : MonoBehaviour {
 
     //图片URL
@@ -12,9 +14,14 @@ public class LoadImage : MonoBehaviour {
 	void Start () {
         StartCoroutine(loadBmp());
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    private void StartCoroutine(IEnumerator enumerator)
+    {
+        throw new NotImplementedException();
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
     //防止下载阻塞, 使用携程
