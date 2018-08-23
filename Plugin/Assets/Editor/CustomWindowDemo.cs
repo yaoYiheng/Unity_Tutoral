@@ -6,6 +6,9 @@ using UnityEngine;
 public class CustomWindowDemo : EditorWindow
 {
 
+    public string mySTring;
+    private Color myColor = Color.red;
+
     [MenuItem("菜单/窗口")]
     public static void ShowWindow()
     {
@@ -36,11 +39,17 @@ public class CustomWindowDemo : EditorWindow
 
     public void OnGUI()
     {
+        //所有的空间都是在这个方法中绘制的
         if(GUILayout.Button("关闭"))
         {
             Close();
         }
         Debug.Log("OnGUI被调用");
+        //绘制文本输入框
+        mySTring = EditorGUILayout.TextField(mySTring);
+
+        //绘制颜色面板
+        myColor = EditorGUILayout.ColorField(myColor);
     }
 
     public void OnEnable()
