@@ -45,8 +45,18 @@ public class CustomWindowDemo : EditorWindow
             Close();
         }
         Debug.Log("OnGUI被调用");
+
+        //添加标签
+        EditorGUILayout.LabelField("文本标签");
         //绘制文本输入框
         mySTring = EditorGUILayout.TextField(mySTring);
+
+        //添加空行
+        EditorGUILayout.Space();
+
+        //可被选中的标签
+        EditorGUILayout.SelectableLabel("输入密码");
+        mySTring = EditorGUILayout.PasswordField(mySTring);
 
         //绘制颜色面板
         myColor = EditorGUILayout.ColorField(myColor);
