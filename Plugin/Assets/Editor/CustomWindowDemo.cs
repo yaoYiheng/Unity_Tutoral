@@ -14,8 +14,8 @@ public class CustomWindowDemo : EditorWindow
     private float myMinFloat;
     private float myMaxFloat;
 
-    private float minFloat = 0;
-    private float maxFloat = 100;
+    //private float minFloat = 0;
+    //private float maxFloat = 100;
 
     private Vector2 vector2;
     private Vector3 vector3;
