@@ -8,7 +8,8 @@ public class CustomWindowDemo : EditorWindow
 
     public string mySTring;
     private Color myColor = Color.red;
-
+    private int myInt;
+    private float myFloat;
     [MenuItem("菜单/窗口")]
     public static void ShowWindow()
     {
@@ -60,6 +61,12 @@ public class CustomWindowDemo : EditorWindow
 
         //绘制颜色面板
         myColor = EditorGUILayout.ColorField(myColor);
+
+        EditorGUILayout.LabelField("整型输入");
+        myInt =  EditorGUILayout.IntField(myInt);
+        EditorGUILayout.Space();
+        EditorGUILayout.LabelField("浮点输入");
+        myFloat = EditorGUILayout.FloatField(myFloat);
     }
 
     public void OnEnable()
