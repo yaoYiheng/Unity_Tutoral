@@ -16,6 +16,15 @@ public class CustomWindowDemo : EditorWindow
 
     private float minFloat = 0;
     private float maxFloat = 100;
+
+    private Vector2 vector2;
+    private Vector3 vector3;
+    private Vector4 vector4;
+
+    private Rect rect;
+    private Bounds bounds;
+
+
     [MenuItem("菜单/窗口")]
     public static void ShowWindow()
     {
@@ -82,8 +91,24 @@ public class CustomWindowDemo : EditorWindow
         myMaxFloat = EditorGUILayout.Slider(myMaxFloat, 0, 100);
 
 
-
+        EditorGUILayout.LabelField("鬼畜滑动条");
         EditorGUILayout.MinMaxSlider(ref myMinFloat, ref myMaxFloat, 1, 100);
+
+        vector2 = EditorGUILayout.Vector2Field("二维坐标", vector2);
+        EditorGUILayout.Space();
+
+        vector3 = EditorGUILayout.Vector3Field("三维坐标", vector3);
+        EditorGUILayout.Space();
+
+        vector4 = EditorGUILayout.Vector4Field("四维坐标", vector4);
+        EditorGUILayout.Space();
+
+        rect = EditorGUILayout.RectField("矩阵", rect);
+        EditorGUILayout.Space();
+
+        bounds = EditorGUILayout.BoundsField("间距", bounds);
+        EditorGUILayout.Space();
+
     }
 
     public void OnEnable()
