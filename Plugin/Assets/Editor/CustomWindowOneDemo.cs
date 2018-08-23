@@ -17,6 +17,8 @@ public class CustomWindowOneDemo : EditorWindow
 
 
     private bool isSelected;
+    private bool isToggled;
+
     [MenuItem("Menu/窗口一")]
     public static void ShowWindow()
     {
@@ -40,11 +42,20 @@ public class CustomWindowOneDemo : EditorWindow
     }
     private void OnGUI()
     {
+        //在折叠的外围包裹一层, 需要与结尾的代码相互配合
+        EditorGUILayout.BeginVertical(GUI.skin.box);
+        EditorGUI.indentLevel++;
+
+        //开始字段的分组
+        isToggled = EditorGUILayout.BeginToggleGroup("使用下列属性", isToggled);
+
         index = EditorGUILayout.Popup(index, strs);
         index = EditorGUILayout.IntPopup(index, strs, ints);
 
         EditorGUILayout.Space();
 
+        //开始水平分组
+        EditorGUILayout.BeginHorizontal(GUI.skin.box);
         //单字选择
         isSelected = EditorGUILayout.Toggle("是否折叠", isSelected);
 
@@ -72,7 +83,14 @@ public class CustomWindowOneDemo : EditorWindow
             EditorGUI.indentLevel--;
             EditorGUILayout.EndVertical();
         }
-
+        //结束水平方向的分组
+        EditorGUILayout.EndHorizontal();
+        //结束分组
+        EditorGUILayout.EndToggleGroup();
+        //与indentLevel++相对应
+        EditorGUI.indentLevel--;
+        //结束垂直分组
+        EditorGUILayout.EndVertical();
 
     }
 }
