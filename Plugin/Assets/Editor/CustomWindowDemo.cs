@@ -10,6 +10,12 @@ public class CustomWindowDemo : EditorWindow
     private Color myColor = Color.red;
     private int myInt;
     private float myFloat;
+
+    private float myMinFloat;
+    private float myMaxFloat;
+
+    private float minFloat = 0;
+    private float maxFloat = 100;
     [MenuItem("菜单/窗口")]
     public static void ShowWindow()
     {
@@ -67,6 +73,17 @@ public class CustomWindowDemo : EditorWindow
         EditorGUILayout.Space();
         EditorGUILayout.LabelField("浮点输入");
         myFloat = EditorGUILayout.FloatField(myFloat);
+
+        EditorGUILayout.LabelField("Int滑动条");
+        myInt = EditorGUILayout.IntSlider(myInt, 0, 100);
+
+        EditorGUILayout.LabelField("FLoat滑动条");
+        myMinFloat = EditorGUILayout.Slider(myMinFloat, 0, 100);
+        myMaxFloat = EditorGUILayout.Slider(myMaxFloat, 0, 100);
+
+
+
+        EditorGUILayout.MinMaxSlider(ref myMinFloat, ref myMaxFloat, 1, 100);
     }
 
     public void OnEnable()
