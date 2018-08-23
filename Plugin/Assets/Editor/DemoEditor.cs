@@ -21,7 +21,7 @@ public class DemoEditor : MonoBehaviour {
 
     }
  
-    [ContextMenu("Menu1")]
+    [ContextMenu("Menu")]
     public void Test1()
     {
         Debug.Log("Test1");
