@@ -19,7 +19,7 @@ public class CameraMove : MonoBehaviour {
     private void MoveCamera()
     {
 
-        if(transform.position.z < 105)
+        if(transform.position.z < 102)
         {
             transform.Translate(Vector3.forward * speed * Time.deltaTime);    
         }
