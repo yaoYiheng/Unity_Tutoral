@@ -64,8 +64,12 @@ public class Sound : Singleton<Sound>
 
             AudioClip clip = Resources.Load<AudioClip>(path);
 
-            BgAudioSource.clip = clip;
-            BgAudioSource.Play();
+            if(clip != null)
+            {
+                BgAudioSource.clip = clip;
+                BgAudioSource.Play();    
+            }
+
         }
 
 

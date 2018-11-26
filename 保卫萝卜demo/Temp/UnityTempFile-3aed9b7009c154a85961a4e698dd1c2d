@@ -90,10 +90,16 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+'Assets/Game/Scripts/Framework/MVC/Controller.cs'
+'Assets/Game/Scripts/Framework/MVC/MVC.cs'
+'Assets/Game/Scripts/Framework/MVC/Model.cs'
+'Assets/Game/Scripts/Framework/MVC/View.cs'
 'Assets/Game/Scripts/Framework/Pool/IReuseable.cs'
 'Assets/Game/Scripts/Framework/Pool/ObjectPool.cs'
 'Assets/Game/Scripts/Framework/Pool/ReusableObject.cs'
 'Assets/Game/Scripts/Framework/Pool/SubPool.cs'
+'Assets/Game/Scripts/Framework/Singleton/Singleton.cs'
+'Assets/Game/Scripts/Framework/Sound/Sound.cs'
 'Assets/Text.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'
