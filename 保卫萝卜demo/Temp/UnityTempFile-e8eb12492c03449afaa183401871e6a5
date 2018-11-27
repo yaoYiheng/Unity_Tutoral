@@ -108,6 +108,7 @@
 'Assets/Game/Scripts/Framework/Pool/SubPool.cs'
 'Assets/Game/Scripts/Framework/Singleton/Singleton.cs'
 'Assets/Game/Scripts/Framework/Sound/Sound.cs'
+'Assets/Test.cs'
 'Assets/Text.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Xml.Linq.dll'

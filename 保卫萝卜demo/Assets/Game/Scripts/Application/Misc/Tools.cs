@@ -184,9 +184,8 @@ public class Tools
 
     }
 
-    //加载图片
 
-    IEnumerator LoadImage(string url, SpriteRenderer renderer)
+    public static IEnumerator LoadImage(string url, SpriteRenderer renderer)
     {
         WWW www = new WWW(url);
 
