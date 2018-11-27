@@ -57,7 +57,7 @@ public class Map : MonoBehaviour
         {
             List<Vector3> tempList = new List<Vector3>();
 
-            foreach(GridInfo grid in mGridList)
+            foreach(GridInfo grid in mRoad)
             {
                 //调用 方法得到grid的
                 Vector3 temp = GetGridPosition(grid);
@@ -201,6 +201,51 @@ public class Map : MonoBehaviour
             //绘制
             Gizmos.DrawLine(from, to);
             
+        }
+
+        //遍历所有格子, 查在可放置炮塔的位置绘制图标
+        foreach(GridInfo grid in mGridList)
+        {
+            if(grid.CanHold)
+            {
+
+                Vector3 center = GetGridPosition(grid);
+                //需要把这张图片放在Gizmos文件夹下
+                Gizmos.DrawIcon(center, "holder.png", true);
+            }
+        }
+
+        //根据怪物行进的点, 绘制出起点终点以及所经过的路径
+
+        //使用红线
+        Gizmos.color = Color.magenta;
+
+        //print(Path.GetType());
+        for (int i = 0; i < Path.Length; ++i)
+        {
+            //将第一个点绘制start
+            if(i == 0)
+            {
+                //需要把这张图片放在Gizmos文件夹下
+                Gizmos.DrawIcon(Path[i], "start.png", true);
+            }
+
+            //如果路径点的个数大于1, 并且i为数组中最后一个元素. 则绘制end图标
+            if(Path.Length > 1 && i == (Path.Length - 1))
+            {
+                Gizmos.DrawIcon(Path[i], "end.png", true);
+            }
+
+            //如果数量大于1且索引不为0, 则在两点之间绘制一条线
+            if(Path.Length > 1 && i != 0)
+            {
+                Vector3 from = Path[i - 1];
+                Vector3 to = Path[i];
+
+                Gizmos.DrawLine(from, to);
+
+            }
+
         }
     }
     #endregion
