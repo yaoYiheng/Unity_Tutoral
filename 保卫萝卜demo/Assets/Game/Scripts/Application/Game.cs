@@ -9,17 +9,7 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Sound))]
 public class Game : ApplicationBase<Game>
 {
-    void SceneManager_SceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        SceneArgs args = new SceneArgs();
-        args.Level = arg0.buildIndex;
 
-
-        //先要注册启动命令
-
-        //发布进入场景的事件
-        SendEvent(Const.E_EnterScene, args);
-    }
 
 
     //全局访问的功能
@@ -76,6 +66,18 @@ public class Game : ApplicationBase<Game>
     }
 
 
+    //代替下面的方法..
+    void SceneManager_SceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        SceneArgs args = new SceneArgs();
+        args.Level = arg0.buildIndex;
+
+
+        //先要注册启动命令
+
+        //发布进入场景的事件
+        SendEvent(Const.E_EnterScene, args);
+    }
     ////加载一个新场景时候调用，参数为加载到的场景索引
     //private void OnLevelWasLoaded(int level)
     //{

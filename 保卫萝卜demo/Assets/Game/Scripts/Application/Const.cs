@@ -17,6 +17,7 @@ public static class Const
 
     //View
     public const string V_Start = "V_Start";
+    public const string V_Select = "V_Select";
 
     //Controller
 
@@ -24,5 +25,10 @@ public static class Const
 
 
     public const string E_EnterScene = "E_EnterScene"; //SceneArgs
-    public const string E_ExitScene = "E_ExitScene";
+    public const string E_ExitScene = "E_ExitScene";//SceneArgs
+
+    public const string E_StartLevel = "E_StartLevel"; //StartLevelArgs
+    public const string E_EndLevel = "E_EndLevel"; //EndLevelArgs
+
+
 }
