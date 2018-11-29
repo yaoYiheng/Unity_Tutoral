@@ -1,6 +1,19 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
+public class GridClickEventArgs: EventArgs
+{
+    public int MouseClick;
+    public GridInfo Grid;
+
+    public GridClickEventArgs(int mouseID, GridInfo grid)
+    {
+        this.MouseClick = mouseID;
+        this.Grid = grid;
+    }
+}
 
 public class Map : MonoBehaviour
 {
@@ -12,6 +25,7 @@ public class Map : MonoBehaviour
 
 
     #region 事件
+    public event EventHandler<GridClickEventArgs> OnGridClick;
     #endregion
 
 
@@ -37,6 +51,12 @@ public class Map : MonoBehaviour
 
 
     #region 属性
+
+
+    public Level Level
+    {
+        get { return mLeve; }
+    }
 
     //获取地图所有格子集合
     public List<GridInfo> Grids
@@ -103,9 +123,10 @@ public class Map : MonoBehaviour
         this.mLeve = level;
 
         //设置 图片
-        this.BackgroundImage = Const.MapPath + level.Background;
-        this.RoadImage = Const.MapPath + level.Road;
+        this.BackgroundImage = "file://" + Const.MapPath + level.Background;
+        this.RoadImage = "file://" + Const.MapPath + level.Road;
 
+   
         //寻路路径, 将level中保存的路径添加到地图的mRoad属性当中
 
         foreach(Point point in level.Path)
@@ -121,6 +142,7 @@ public class Map : MonoBehaviour
         foreach(Point point in level.WeaponPos)
         {
             GridInfo grid = GetGridByIndex(point.X, point.Y);
+
             grid.CanHold = true;
         }
 
@@ -164,7 +186,49 @@ public class Map : MonoBehaviour
         for (int row = 0; row < RowCount; ++row)
             for (int col = 0; col < ColumnCount; ++col)
                 mGridList.Add(new GridInfo(col, row));
-                
+
+        OnGridClick += Map_OnGridClick;
+    }
+
+    private void Update()
+    {
+        if(Input.GetMouseButtonDown(0))
+        {
+            //获取到点击鼠标小的格子
+            GridInfo grid = GetGridUnderMouse();
+
+            //如果grid不为空
+            if(grid != null)
+            {
+                //将这个grid应用到事件的参数当中
+                GridClickEventArgs clickEventArgs = new GridClickEventArgs(0, grid);
+
+                if(OnGridClick != null)
+                {
+                    print("OnGridClick");
+                    OnGridClick(this, clickEventArgs);
+                }
+            }
+
+        }
+
+        if(Input.GetMouseButtonDown(1))
+        {
+            //获取到点击鼠标小的格子
+            GridInfo grid = GetGridUnderMouse();
+
+            //如果grid不为空
+            if (grid != null)
+            {
+                //将这个grid应用到事件的参数当中
+                GridClickEventArgs clickEventArgs = new GridClickEventArgs(1, grid);
+
+                if (OnGridClick != null)
+                {
+                    OnGridClick(this, clickEventArgs);
+                }
+            }
+        }
     }
     //该回调函数只在编辑器里起作用
     private void OnDrawGizmos()
@@ -220,7 +284,7 @@ public class Map : MonoBehaviour
         //使用红线
         Gizmos.color = Color.magenta;
 
-        //print(Path.GetType());
+
         for (int i = 0; i < Path.Length; ++i)
         {
             //将第一个点绘制start
@@ -251,6 +315,39 @@ public class Map : MonoBehaviour
     #endregion
 
     #region 事件回调
+
+    void Map_OnGridClick(object sender, GridClickEventArgs args)
+    {
+        print("Map_OnGridClick");
+        //只有当当前的场景为LevelBuilder时, 才能响应该方法
+        if (gameObject.scene.name != "LevelBuilder") return;
+
+        //当前Level为不为空才能继续
+        if (Level == null) return;
+
+        //当鼠标点击左键的时候, 处理放置塔的操作, 需要当被点的格子不出现在路径的时候
+        if(args.MouseClick == 0 && !mRoad.Contains(args.Grid))
+        {
+            args.Grid.CanHold = !args.Grid.CanHold;
+        }
+
+        //当点击的是右键.处理添加路径
+        // 当路径点被标记会不能放置塔的位置
+        if (args.MouseClick == 1 && !args.Grid.CanHold)
+        {
+            //判断这个点是否在路径列表中
+            if(mRoad.Contains(args.Grid))
+            {
+                mRoad.Remove(args.Grid);
+            }
+            else
+            {
+                mRoad.Add(args.Grid);
+            }
+        }
+
+        //当鼠标点击右键的时候, 处理放置路径的操作
+    }
     #endregion
 
 

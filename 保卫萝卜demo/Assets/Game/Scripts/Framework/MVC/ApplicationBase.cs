@@ -14,9 +14,9 @@ public abstract class ApplicationBase<T> : Singleton<T> where T:MonoBehaviour
     }
 
     //执行, 向系统发送一个启动消息.
-    protected void SendEvent(string eventName)
+    protected void SendEvent(string eventName, object args = null)
     {
-        MVC.SendEvent(eventName);
+        MVC.SendEvent(eventName, args);
     }
 
 }

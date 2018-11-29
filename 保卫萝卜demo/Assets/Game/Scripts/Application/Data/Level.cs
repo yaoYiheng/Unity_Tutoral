@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Level
+public class  Level
 {
     //关卡名字
     public string Name;

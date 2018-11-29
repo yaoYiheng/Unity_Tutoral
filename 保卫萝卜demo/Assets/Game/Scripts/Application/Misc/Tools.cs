@@ -44,28 +44,31 @@ public class Tools
         document.Load(stream);
         //从Xml文件中, 向Level类中填充数据
 
-        level.Name = document.SelectSingleNode("Level/Name").InnerText;
-        level.Background = document.SelectSingleNode("Level/Background").InnerText;
-        level.Road = document.SelectSingleNode("Level/Road").InnerText;
-        level.InitGold = int.Parse(document.SelectSingleNode("Level/InitScore").InnerText);
+        level.Name = document.SelectSingleNode("/Level/Name").InnerText;
+        level.Background = document.SelectSingleNode("/Level/Background").InnerText;
+        level.Road = document.SelectSingleNode("/Level/Road").InnerText;
+        level.InitGold = int.Parse(document.SelectSingleNode("/Level/InitScore").InnerText);
 
 
         //现在是遍历每一个节点中的数组元素, 添加到Level中的属性当中
 
         //声明一个临时的List
-        XmlNodeList list = null;
+        XmlNodeList list;
 
         //读取可安放武器的点
-        list = document.SelectNodes("Level/Holder/Point");
+        list = document.SelectNodes("/Level/Holder/Point");
 
         for (int i = 0; i < list.Count; i++)
         {
             //获取每一个点, 并添加到level的可安放炮塔的位置列表当中
             XmlNode node = list[i];
 
+
             //根据每一个xml的结点内的属性, 生成一个点
             Point point = new Point(int.Parse(node.Attributes["X"].Value),
-                                    int.Parse(node.Attributes["X"].Value));
+                                    int.Parse(node.Attributes["Y"].Value));
+
+
 
             //得到点后, 添加到Level类中对应的属性当中
             level.WeaponPos.Add(point);
@@ -73,7 +76,7 @@ public class Tools
         }
 
         //读取怪物的行进路线点
-        list = document.SelectNodes("Level/Path/Point");
+        list = document.SelectNodes("/Level/Path/Point");
 
         //遍历
         for (int i = 0; i < list.Count; ++i)
@@ -91,17 +94,16 @@ public class Tools
 
 
         //读取xml文件中的Rounds
-        list = document.SelectNodes("Level/Rounds/Round");
+        list = document.SelectNodes("/Level/Rounds/Round");
+
 
         //遍历
         for (int i = 0; i < list.Count;++ i)
         {
             XmlNode node = list[i];
 
-            Round round = null;
-
-            round.MonsterID = int.Parse(node.Attributes["Monster"].Value);
-            round.Count = int.Parse(node.Attributes["Count"].Value);
+            Round round = new Round(int.Parse(node.Attributes["Monster"].Value),
+                                    int.Parse(node.Attributes["Count"].Value));
 
             //添加到Round列表当中
             level.Rounds.Add(round);
@@ -124,7 +126,7 @@ public class Tools
         //添加文件头
 
         //根据所需要的格式添加写入到string
-        builder.AppendLine("Level");
+        builder.AppendLine("/Level");
         builder.AppendLine(string.Format("<Name>{0}</Name>", level.Name));
         //CardImage
         builder.AppendLine(string.Format("<CardImage>{0}</CardImage>", level.CardImage));
@@ -192,7 +194,9 @@ public class Tools
         while (!www.isDone)
             yield return www;
 
+
         Texture2D texture = www.texture;
+
         Sprite sprite = Sprite.Create(
             texture,
             new Rect(0, 0, texture.width, texture.height),

@@ -90,13 +90,16 @@
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
 -define:ENABLE_VSTU
+'Assets/Game/Scripts/Application/Args/SceneArgs.cs'
 'Assets/Game/Scripts/Application/Const.cs'
 'Assets/Game/Scripts/Application/Data/GridInfo.cs'
 'Assets/Game/Scripts/Application/Data/Level.cs'
 'Assets/Game/Scripts/Application/Data/Point.cs'
 'Assets/Game/Scripts/Application/Data/Round.cs'
+'Assets/Game/Scripts/Application/Game.cs'
 'Assets/Game/Scripts/Application/Misc/Tools.cs'
 'Assets/Game/Scripts/Application/Obejcts/Map.cs'
+'Assets/Game/Scripts/Application/StaticData/StaticData.cs'
 'Assets/Game/Scripts/Framework/MVC/ApplicationBase.cs'
 'Assets/Game/Scripts/Framework/MVC/Controller.cs'
 'Assets/Game/Scripts/Framework/MVC/MVC.cs'
