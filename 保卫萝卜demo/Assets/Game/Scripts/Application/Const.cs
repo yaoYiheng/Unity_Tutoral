@@ -18,6 +18,13 @@ public static class Const
     //View
     public const string V_Start = "V_Start";
     public const string V_Select = "V_Select";
+    public const string V_UIBoard = "V_UIBoard";
+    public const string V_UICountDown = "V_UICountDown";
+    public const string V_UIwin = "V_UIwin";
+    public const string V_UILost = "V_UILost";
+    public const string V_UISystem = "V_UISystem";
+    public const string V_UIComplete = "V_UIComplete";
+
 
     //Controller
 
@@ -31,4 +38,10 @@ public static class Const
     public const string E_EndLevel = "E_EndLevel"; //EndLevelArgs
 
 
+}
+
+public enum GameSpeed
+{
+    One,
+    Two
 }

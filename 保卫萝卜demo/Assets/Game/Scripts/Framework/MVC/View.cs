@@ -14,6 +14,9 @@ public abstract class View : MonoBehaviour
     [HideInInspector]
     public List<string> AttentionEvents = new List<string>();
 
+    //虚函数, 提供给子类, 待需要将关心的事件添加到列表中的时候调用.
+    public virtual void RegisterEvent(){}
+
     //用来处理事件的函数
     public abstract void HandleEvent(string eventName, object data);
 
