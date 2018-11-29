@@ -16,13 +16,13 @@ public static class Const
 
 
     //View
-
+    public const string V_Start = "V_Start";
 
     //Controller
 
     public const string E_StartUp = "E_StartUp";
 
 
-    public const string E_EnterScene = "E_EnterScene";
+    public const string E_EnterScene = "E_EnterScene"; //SceneArgs
     public const string E_ExitScene = "E_ExitScene";
 }

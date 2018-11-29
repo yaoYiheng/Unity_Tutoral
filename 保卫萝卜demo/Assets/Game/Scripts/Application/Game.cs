@@ -9,6 +9,18 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(Sound))]
 public class Game : ApplicationBase<Game>
 {
+    void SceneManager_SceneLoaded(Scene arg0, LoadSceneMode arg1)
+    {
+        SceneArgs args = new SceneArgs();
+        args.Level = arg0.buildIndex;
+
+
+        //先要注册启动命令
+
+        //发布进入场景的事件
+        SendEvent(Const.E_EnterScene, args);
+    }
+
 
     //全局访问的功能
     public ObjectPool ObjectPool = null;
@@ -37,13 +49,19 @@ public class Game : ApplicationBase<Game>
         SceneManager.LoadScene(sceneLevel, LoadSceneMode.Single);
     }
 
-     
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        SceneManager.sceneLoaded += SceneManager_SceneLoaded;
+    }
 
     //游戏入口
     private void Start()
     {
         //确保Game对象一直都在
-        DontDestroyOnLoad(this.gameObject);
+          DontDestroyOnLoad(this.gameObject);
 
         //给全局单例赋值
         ObjectPool = ObjectPool.Instance;
@@ -57,17 +75,18 @@ public class Game : ApplicationBase<Game>
 
     }
 
-    //加载一个新场景时候调用，参数为加载到的场景索引
-    private void OnLevelWasLoaded(int level)
-    {
-        SceneArgs args = new SceneArgs();
-        args.Level = level;
+
+    ////加载一个新场景时候调用，参数为加载到的场景索引
+    //private void OnLevelWasLoaded(int level)
+    //{
+    //    SceneArgs args = new SceneArgs();
+    //    args.Level = level;
 
 
-        //先要注册启动命令
+    //    //先要注册启动命令
 
-        //发布进入场景的事件
-        SendEvent(Const.E_EnterScene, args);
-    }
+    //    //发布进入场景的事件
+    //    SendEvent(Const.E_EnterScene, args);
+    //}
 
 }

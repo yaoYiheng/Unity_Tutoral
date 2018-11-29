@@ -11,6 +11,7 @@ public abstract class View : MonoBehaviour
     public abstract string Name { get; }
 
     //关心的事件列表
+    [HideInInspector]
     public List<string> AttentionEvents = new List<string>();
 
     //用来处理事件的函数

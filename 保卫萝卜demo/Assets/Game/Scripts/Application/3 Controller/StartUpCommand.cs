@@ -10,7 +10,7 @@ public class StartUpCommand : Controller
 
         //注册命令(Controller)
 
-        RegisterController(Const.E_StartUp, typeof(StartUpCommand));
+
         RegisterController(Const.E_EnterScene, typeof(EnterSceneCommand));
         RegisterController(Const.E_ExitScene, typeof(ExitSceneCommand));
 
