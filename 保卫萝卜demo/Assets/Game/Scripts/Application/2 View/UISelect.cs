@@ -33,9 +33,10 @@ public class UISelect : View
     {
         Game.Instance.LoadScene(1);
     }
-    #endregion
+
     public void ChooseLevel()
     {
+
         //添加事件
         //初始化事件参数
         StartLevelArgs args = new StartLevelArgs() { LevelIndex = 0 };
@@ -44,13 +45,32 @@ public class UISelect : View
         SendEvent(Const.E_StartLevel, args);
 
     }
+
+    //加载卡片
+    public void LoadCards()
+    {
+        print("----------Loads");
+    }
+    #endregion
+
     #region Unity回调
     #endregion
 
     #region 事件回调
+
+    public override void RegisterEvent()
+    {
+        this.AttentionEvents.Add(Const.E_EnterScene);
+    }
     public override void HandleEvent(string eventName, object data)
     {
-        throw new System.NotImplementedException();
+        SceneArgs args = data as SceneArgs;
+        switch(args.Level)
+        {
+            case 2:
+                LoadCards();
+                break;
+        }
     } 
     #endregion
 

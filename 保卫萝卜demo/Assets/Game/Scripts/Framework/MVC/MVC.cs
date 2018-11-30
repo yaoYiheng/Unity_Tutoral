@@ -28,6 +28,12 @@ public static class MVC
 
     public static void RegisterView(View view)
     {
+        if (Views.ContainsKey(view.Name))
+            Views.Remove(view.name);
+
+
+        //完成注册
+        view.RegisterEvent();
         Views[view.Name] = view;
     }
 

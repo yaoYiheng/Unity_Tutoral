@@ -4,6 +4,7 @@ using UnityEngine;
 using System.IO;
 using System.Text;
 using System.Xml;
+using UnityEngine.UI;
 
 
 //工具类, 用来保存读取Level
@@ -204,4 +205,24 @@ public class Tools
 
         renderer.sprite = sprite;
     }
+
+
+    public static IEnumerator LoadImage(string url, Image renderer)
+    {
+        WWW www = new WWW(url);
+
+        while (!www.isDone)
+            yield return www;
+
+
+        Texture2D texture = www.texture;
+
+        Sprite sprite = Sprite.Create(
+            texture,
+            new Rect(0, 0, texture.width, texture.height),
+            new Vector2(0.5f, 0.5f));
+
+        renderer.sprite = sprite;
+    }
+
 }

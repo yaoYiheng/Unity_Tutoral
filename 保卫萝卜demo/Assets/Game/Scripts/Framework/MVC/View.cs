@@ -18,7 +18,7 @@ public abstract class View : MonoBehaviour
     public virtual void RegisterEvent(){}
 
     //用来处理事件的函数
-    public abstract void HandleEvent(string eventName, object data);
+    public abstract void  HandleEvent(string eventName, object data);
 
     //获取模型
     public Model GetModel<T>() where T: Model

@@ -205,7 +205,7 @@ public class Map : MonoBehaviour
 
                 if(OnGridClick != null)
                 {
-                    print("OnGridClick");
+
                     OnGridClick(this, clickEventArgs);
                 }
             }

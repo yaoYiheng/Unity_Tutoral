@@ -59,6 +59,8 @@ public class UIBoard : View
         }
     }
 
+
+
     public GameSpeed Speed
     {
         get
@@ -114,7 +116,11 @@ public class UIBoard : View
     {
         
     }
-
+    public void UpdateRoundInfo(int current, int total)
+    {
+        txtCurrent.text = current.ToString("D2");//始终保留2位整数
+        txtTotal.text = total.ToString();
+    }
     #endregion
 
     #region Unity回调

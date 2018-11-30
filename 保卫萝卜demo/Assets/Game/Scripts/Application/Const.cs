@@ -7,6 +7,7 @@ public static class Const
     //目录
     public static readonly string LevelPath = Application.dataPath + "/Game/Res/Levels/";
     public static readonly string MapPath = Application.dataPath + "/Game/Res/Maps/";
+    public static readonly string CardPath = Application.dataPath + "/Game/Res/Cards/";
 
     //存档
 
@@ -37,7 +38,7 @@ public static class Const
     public const string E_StartLevel = "E_StartLevel"; //StartLevelArgs
     public const string E_EndLevel = "E_EndLevel"; //EndLevelArgs
 
-
+    public const string E_CountDownComplete = "E_CountDownComplete"; //EndLevelArgs
 }
 
 public enum GameSpeed
