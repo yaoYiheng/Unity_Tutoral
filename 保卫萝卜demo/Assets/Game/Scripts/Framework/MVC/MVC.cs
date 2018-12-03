@@ -43,25 +43,26 @@ public static class MVC
     }
 
     //获取
-    public static Model GetModel<T> () where T: Model
+    public static T GetModel<T> () where T: Model
     {
+        Debug.Log(Models.Count);
         foreach(Model m in Models.Values)
         {
             if (m is T)
-                return m;
+                return (T)m;
         }
 
         return null;
     }
 
     //获取View
-    public static View GetView<T>() where T:View
+    public static T GetView<T>() where T:View
     {
         foreach(View v in Views.Values)
         {
             if(v is T)
             {
-                return v;
+                return v as T;
             }
         }
 

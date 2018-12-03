@@ -22,6 +22,9 @@ public class UIComplete : View
     {
         //跳转到最初的场景
         Game.Instance.LoadScene(1);
+
+
+
     }
 
     public void OnClearClick()

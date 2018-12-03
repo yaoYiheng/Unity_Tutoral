@@ -20,6 +20,7 @@ public class UIStart : View
     //跳转到选择关卡的场景
     public void GotoSelect()
     {
+
         Game.Instance.LoadScene(2);
     }
 

@@ -15,8 +15,8 @@ public class UICard : MonoBehaviour, IPointerDownHandler
 
     private CardInfo m_CardInfo = null;
 
-    private bool m_IsLocked;
-    private bool m_IsTransparent;
+    public bool m_IsLocked;
+    public bool m_IsTransparent;
 
     public bool IsLocked
     {
@@ -61,6 +61,8 @@ public class UICard : MonoBehaviour, IPointerDownHandler
 
         //获取到存放图片的全路径
         string filePath = "file://" + Const.CardPath + cardInfo.CardName;
+
+
         StartCoroutine(Tools.LoadImage(filePath, imgCard));
 
         //设置锁的显示与否

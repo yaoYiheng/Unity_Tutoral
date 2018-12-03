@@ -46,6 +46,7 @@ public class Tools
         //从Xml文件中, 向Level类中填充数据
 
         level.Name = document.SelectSingleNode("/Level/Name").InnerText;
+        level.CardImage = document.SelectSingleNode("/Level/CardImage").InnerText;
         level.Background = document.SelectSingleNode("/Level/Background").InnerText;
         level.Road = document.SelectSingleNode("/Level/Road").InnerText;
         level.InitGold = int.Parse(document.SelectSingleNode("/Level/InitScore").InnerText);

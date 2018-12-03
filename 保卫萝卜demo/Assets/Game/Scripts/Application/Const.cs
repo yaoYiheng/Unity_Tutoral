@@ -10,11 +10,11 @@ public static class Const
     public static readonly string CardPath = Application.dataPath + "/Game/Res/Cards/";
 
     //存档
-
+    public const string GameProgress = "GameProgress";
 
     //Model
 
-
+    public const string M_GameModel = "M_GameModel";
 
     //View
     public const string V_Start = "V_Start";

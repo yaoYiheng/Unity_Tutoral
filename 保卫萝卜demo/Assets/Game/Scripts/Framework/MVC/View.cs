@@ -21,9 +21,9 @@ public abstract class View : MonoBehaviour
     public abstract void  HandleEvent(string eventName, object data);
 
     //获取模型
-    public Model GetModel<T>() where T: Model
+    public T GetModel<T>() where T: Model
     {
-        return MVC.GetModel<T>();
+        return MVC.GetModel<T>() as T;
     }
 
 
