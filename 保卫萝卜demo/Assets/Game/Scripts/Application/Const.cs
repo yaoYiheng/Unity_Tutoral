@@ -15,6 +15,7 @@ public static class Const
     //Model
 
     public const string M_GameModel = "M_GameModel";
+    public const string M_RoundModel = "M_RoundModel";
 
     //View
     public const string V_Start = "V_Start";
@@ -25,6 +26,7 @@ public static class Const
     public const string V_UILost = "V_UILost";
     public const string V_UISystem = "V_UISystem";
     public const string V_UIComplete = "V_UIComplete";
+    public const string V_Spawner = "V_Spawner";
 
 
     //Controller
@@ -39,6 +41,9 @@ public static class Const
     public const string E_EndLevel = "E_EndLevel"; //EndLevelArgs
 
     public const string E_CountDownComplete = "E_CountDownComplete"; //EndLevelArgs
+
+    public const string E_StartRound = "E_StartRound"; //StartRoundArgs
+    public const string E_SpawnMonster = "E_SpawnMonster"; //MonsterArgs
 }
 
 public enum GameSpeed

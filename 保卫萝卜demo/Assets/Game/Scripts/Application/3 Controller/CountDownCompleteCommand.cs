@@ -6,6 +6,9 @@ public class CountDownCompleteCommand : Controller
 {
     public override void Execute(object data)
     {
-        Game.Instance.LoadScene(4);
+        Debug.Log("倒计时结束");
+        //倒计时结束后.
+        RoundModel model = GetModel<RoundModel>();
+        model.StartRound();
     }
 }

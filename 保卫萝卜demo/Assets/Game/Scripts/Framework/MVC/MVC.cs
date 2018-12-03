@@ -45,7 +45,7 @@ public static class MVC
     //获取
     public static T GetModel<T> () where T: Model
     {
-        Debug.Log(Models.Count);
+
         foreach(Model m in Models.Values)
         {
             if (m is T)

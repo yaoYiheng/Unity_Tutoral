@@ -8,7 +8,7 @@ public class StartUpCommand : Controller
     {
         //注册模型(Model)
         RegisterModel(new GameModel());
-        Debug.Log( MVC.GetModel<GameModel>().LevelCount);
+        RegisterModel(new RoundModel());
 
 
         //注册命令(Controller)
@@ -31,7 +31,7 @@ public class StartUpCommand : Controller
         gameModel.Initialize();
 
 
-        Debug.Log("Initialize之后" + MVC.GetModel<GameModel>().LevelCount);
+
 
         
         Game.Instance.LoadScene(1);

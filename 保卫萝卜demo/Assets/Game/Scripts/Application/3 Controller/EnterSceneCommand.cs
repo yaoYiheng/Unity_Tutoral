@@ -19,6 +19,8 @@ public class EnterSceneCommand : Controller
                 RegisterView(GameObject.Find("UISelect").GetComponent<UISelect>());
                 break;
             case 3:
+
+                RegisterView(GameObject.Find("Map").GetComponent<Spawner>());
                 RegisterView(GameObject.Find("UIBoard").GetComponent<UIBoard>());
                 //对于一开始就隐藏的UI控件
                 RegisterView(GameObject.Find("Canvas").transform.Find("UICountDown").GetComponent<UICountDown>());
