@@ -58,6 +58,7 @@ public static class MVC
     //获取View
     public static T GetView<T>() where T:View
     {
+        // Debug.Log(Views.Values[3]);
         foreach(View v in Views.Values)
         {
             if(v is T)

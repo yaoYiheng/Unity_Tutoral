@@ -22,7 +22,7 @@ public class Lost : View
     {
         get
         {
-            return Const.V_UIwin;
+            return Const.V_UILost;
         }
     }
     #endregion

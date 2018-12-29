@@ -19,7 +19,7 @@ public class EnterSceneCommand : Controller
                 RegisterView(GameObject.Find("UISelect").GetComponent<UISelect>());
                 break;
             case 3:
-
+                RegisterView(GameObject.Find("TowerPopup").GetComponent<TowerPopup>());
                 RegisterView(GameObject.Find("Map").GetComponent<Spawner>());
                 RegisterView(GameObject.Find("UIBoard").GetComponent<UIBoard>());
                 //对于一开始就隐藏的UI控件
@@ -27,6 +27,7 @@ public class EnterSceneCommand : Controller
                 RegisterView(GameObject.Find("Canvas").transform.Find("UIWin").GetComponent<UIWin>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UILost").GetComponent<UILost>());
                 RegisterView(GameObject.Find("Canvas").transform.Find("UISystem").GetComponent<UISystem>());
+
 
                 break;
             case 4:

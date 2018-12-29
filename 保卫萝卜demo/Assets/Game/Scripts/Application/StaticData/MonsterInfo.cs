@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MonsterInfo : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
+public class MonsterInfo
+{
+	public int MonsterID;
+	public int HealthPoint;
+	public float MoveSpeed;
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

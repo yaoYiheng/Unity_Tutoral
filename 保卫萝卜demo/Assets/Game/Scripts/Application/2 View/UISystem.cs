@@ -20,7 +20,7 @@ public class UISystem : View
     {
         get
         {
-            return Const.V_UIwin;
+            return Const.V_UISystem;
         }
     }
     #endregion

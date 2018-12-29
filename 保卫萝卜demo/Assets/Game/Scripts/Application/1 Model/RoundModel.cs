@@ -44,6 +44,8 @@ public class RoundModel : Model
     public void LoadRoundFromLevel(Level level)
 	{
 		m_Rounds = level.Rounds;
+		m_CurrentRoundInex = -1;
+		m_IsAllCompleted = false;
 	}
 	public void StartRound()
 	{
@@ -81,14 +83,15 @@ public class RoundModel : Model
 				SendEvent(Const.E_SpawnMonster, mArgs);
 
 
+				
 				//每一个怪物之间的间隔
 				yield return new WaitForSeconds(SPAWN_INTERVAL);
 			}
 			
-			
-			
-			//每一波怪物之间的间隔;
-			yield return new WaitForSeconds(ROUND_INTERVAL);
+			m_CurrentRoundInex++;
+			if(i < m_Rounds.Count - 1)
+				//每一波怪物之间的间隔;
+				yield return new WaitForSeconds(ROUND_INTERVAL);
 		}
 
 

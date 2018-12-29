@@ -22,7 +22,7 @@ public class UIWin : View
     {
         get
         {
-            return Const.V_UIwin;
+            return Const.V_UIWin;
         }
     }
     #endregion
@@ -37,7 +37,12 @@ public class UIWin : View
 
     public void Show()
     {
+
         this.gameObject.SetActive(true);
+
+        RoundModel round = GetModel<RoundModel>();
+        UpdateRoundInfo(round.CurrentRoundInex, round.TotalRound);
+
     }
 
     public void Hide()
@@ -47,12 +52,23 @@ public class UIWin : View
   
     public void OnContinueClick()
     {
-        
+        GameModel game = GetModel<GameModel>();
+        if(game.PlayingLevelIndex >= game.LevelCount - 1)
+        {
+            //打通最后一关
+            Game.Instance.LoadScene(4);
+        }
+        else
+        {
+            SendEvent(Const.E_StartLevel, new StartLevelArgs(){LevelIndex = game.PlayingLevelIndex + 1});
+        }
     }
 
     public void OnRestartClick()
     {
-        
+        GameModel game = GetModel<GameModel>();
+
+        SendEvent(Const.E_StartLevel, new StartLevelArgs(){LevelIndex = game.PlayingLevelIndex});
     }
     #endregion
 

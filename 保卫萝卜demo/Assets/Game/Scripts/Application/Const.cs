@@ -5,9 +5,10 @@ using UnityEngine;
 public static class Const 
 {
     //目录
-    public static readonly string LevelPath = Application.dataPath + "/Game/Res/Levels/";
-    public static readonly string MapPath = Application.dataPath + "/Game/Res/Maps/";
-    public static readonly string CardPath = Application.dataPath + "/Game/Res/Cards/";
+    public static readonly string LevelPath = Application.dataPath + "/Game/Resources/Res/Levels/";
+    public static readonly string MapPath = Application.dataPath + "/Game/Resources/Res/Maps/";
+    public static readonly string CardPath = Application.dataPath + "/Game/Resources/Res/Cards/";
+    public static readonly string ImgPath = Application.dataPath + "/Game/Resources/Res/Roles/";
 
     //存档
     public const string GameProgress = "GameProgress";
@@ -22,11 +23,13 @@ public static class Const
     public const string V_Select = "V_Select";
     public const string V_UIBoard = "V_UIBoard";
     public const string V_UICountDown = "V_UICountDown";
-    public const string V_UIwin = "V_UIwin";
+    public const string V_UIWin = "V_UIwin";
     public const string V_UILost = "V_UILost";
     public const string V_UISystem = "V_UISystem";
     public const string V_UIComplete = "V_UIComplete";
     public const string V_Spawner = "V_Spawner";
+
+    public const string V_TowerPopup = "V_TowerPopup";
 
 
     //Controller
@@ -44,10 +47,35 @@ public static class Const
 
     public const string E_StartRound = "E_StartRound"; //StartRoundArgs
     public const string E_SpawnMonster = "E_SpawnMonster"; //MonsterArgs
+
+    public const string E_ShowCreatPanel = "E_ShowCreatPanel";
+    public const string E_ShowUpgradePanel = "E_ShowUpgradePanel";
+    public const string E_HideAllPanel = "E_HideAllPanel";
+
+    public const string E_SpawnWeapon = "E_SpawnWeapon"; //SpawnWeaponArgs
+    public const string E_UpgradeWeapon = "E_UpgradeWeapon"; //UpgradeWeaponArgs
+    public const string E_SellWeapon = "E_SellWeapon"; //SellWeaponArgs
+
+
+    //方法
+    public const string F_SpawnWeapon = "SpawnWeapon";
+    public const string F_UpgradeWeapon = "UpgradeWeapon";
+    public const string F_SellWeapon = "SellWeapon";
 }
 
 public enum GameSpeed
 {
     One,
     Two
+}
+public enum MonsterType
+{
+    
+    Monster0, 
+    Monster1, 
+    Monster2, 
+    Monster3, 
+    Monster4, 
+    Monster5 
+
 }

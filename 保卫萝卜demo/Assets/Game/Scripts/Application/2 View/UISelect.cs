@@ -53,7 +53,6 @@ public class UISelect : View
         StartLevelArgs args = new StartLevelArgs();
         args.LevelIndex = m_SelectIndex;
 
-        print("args.LevelIndex == "+ args.LevelIndex);
 
         //向系统发送事件, 和与事件相关的参数.
         SendEvent(Const.E_StartLevel, args);
@@ -137,7 +136,7 @@ public class UISelect : View
     {   
 
 
-        print("选择的索引Index = " + index);
+
         if(m_SelectIndex == index) return;
 
         m_SelectIndex = index;

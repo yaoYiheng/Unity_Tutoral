@@ -95,7 +95,7 @@ public class GameModel : Model
 		}
 
         //读取游戏进度
-        m_GameProgress = Saver.GetGameProgress();
+        m_GameProgress = 2;//Saver.GetGameProgress();
 
 		//将获得的Level类对象保存到列表
 		m_AllLevels = levels;
@@ -109,6 +109,7 @@ public class GameModel : Model
     public void StartLevel(int level)
     {
         m_PlayingLevelIndex = level;
+        m_IsPlaying = true;
     }
 
     //关卡结束时, 进行统计, 有没有过关, 是否有必要检查存档.
@@ -118,8 +119,10 @@ public class GameModel : Model
         if(IsPassed && PlayingLevelIndex > GameProgress)
         {
             Saver.SetGameProgress(PlayingLevelIndex);
+            m_GameProgress = Saver.GetGameProgress();
         }
 
+        m_IsPlaying = false;
   
     }
 

@@ -50,6 +50,7 @@ public class Game : ApplicationBase<Game>
     //游戏入口
     private void Start()
     {
+        // return;
         //确保Game对象一直都在
           DontDestroyOnLoad(this.gameObject);
 

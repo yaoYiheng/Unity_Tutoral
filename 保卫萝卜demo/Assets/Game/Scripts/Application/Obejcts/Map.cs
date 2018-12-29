@@ -318,7 +318,7 @@ public class Map : MonoBehaviour
 
     void Map_OnGridClick(object sender, GridClickEventArgs args)
     {
-        print("Map_OnGridClick");
+        
         //只有当当前的场景为LevelBuilder时, 才能响应该方法
         if (gameObject.scene.name != "LevelBuilder") return;
 
@@ -377,7 +377,7 @@ public class Map : MonoBehaviour
     }
 
     //获取格子的世界坐标
-    Vector3 GetGridPosition(GridInfo grid)
+    public Vector3 GetGridPosition(GridInfo grid)
     {
         return (new Vector3(
             (-MapWidth / 2 + (grid.X + 0.5f) * GridWidth),

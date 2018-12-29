@@ -22,7 +22,7 @@ public class UILost : View
     {
         get
         {
-            return Const.V_UIwin;
+            return Const.V_UILost;
         }
     }
     #endregion
@@ -38,6 +38,8 @@ public class UILost : View
     public void Show()
     {
         this.gameObject.SetActive(true);
+        RoundModel rm = GetModel<RoundModel>();
+        UpdateRoundInfo(rm.CurrentRoundInex + 1, rm.TotalRound);
     }
 
     public void Hide()
@@ -45,21 +47,27 @@ public class UILost : View
         this.gameObject.SetActive(false);
     }
   
-    public void OnContinueClick()
-    {
-        
-    }
 
     public void OnRestartClick()
     {
-        
+        GameModel game = GetModel<GameModel>();
+        // SendEvent(Const.E_StartLevel, new StartLevelArgs(){LevelIndex = game.PlayingLevelIndex});
+        StartLevelArgs e = new StartLevelArgs();
+        e.LevelIndex = game.PlayingLevelIndex;
+        SendEvent(Const.E_StartLevel, e);
     }
     #endregion
 
     #region Unity回调
+
+    private void Awake()
+    {
+        UpdateRoundInfo(0, 0);
+    }
     #endregion
 
     #region 事件回调
+
 
     //接受到进入场景的事件回调, 就根据事件所传递的参数, 来执行显示该脚本控制的对象的运行
     public override void HandleEvent(string eventName, object data)
