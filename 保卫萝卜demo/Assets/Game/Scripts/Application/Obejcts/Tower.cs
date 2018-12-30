@@ -2,21 +2,27 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tower: Role
+public abstract class Tower: Role
 {
 	#region 常量
 
-#endregion
+	#endregion
 
-#region 事件
+	#region 事件
 
-#endregion
+	#endregion
 
-#region 字段
-int m_CurrentLevel;
-#endregion
+	#region 字段
+	int m_CurrentLevel;
+	
+	protected Animator m_Animator;
+	
+	GridInfo m_GridInfo;
+	Monster m_Target;
 
-#region 属性
+	#endregion
+
+	#region 属性
 
 	public int TowerID{get; private set;}
 
@@ -41,21 +47,66 @@ int m_CurrentLevel;
 		get {return CurrentLevel >= MaxLevel;}
 	}
 
-#endregion
+	public float FireRate{get; private set;}
+	public int BulletID{get; private set;}
 
-#region 方法
+	//攻击范围
+	public float AttactArea{get; private set;}
 
-#endregion
 
-#region Unity回调
+	#endregion
 
-#endregion
+	#region 方法
+	public void Load(int towerID, GridInfo grid)
+	{
+		//通过ID获取数据
+		WeaponInfo info = Game.Instance.StaticData.GetWeaponInfo(towerID);
+		this.MaxLevel = info.MaxLevel;
+		this.FireRate = info.FireRate;
+		this.BasePrice = info.BasePrice;
+		this.AttactArea = info.AttactArea;
+		this.BulletID = info.BulletID;
+		this.CurrentLevel = 1;
 
-#region 事件回调
+		m_GridInfo = grid;
 
-#endregion
+	}
+	protected virtual void Attack()
+	{
 
-#region 帮助方法
+	}
+	#endregion
 
-#endregion
+	#region Unity回调
+
+	#endregion
+
+	#region 事件回调
+	public override void OnSpawn()
+	{
+		m_Animator = GetComponent<Animator>();
+	}
+	
+	public override void UnSpawn()
+	{
+		//重置动画
+		m_Animator.ResetTrigger("IsAttack");
+		m_Animator = null;
+		
+		//清除目标
+		m_Target = null;
+		this.CurrentLevel = 0;
+		this.TowerID = 0;
+		this.BasePrice = 0;
+		this.MaxLevel = 0;
+		this.AttactArea = 0;
+		this.BulletID = 0;
+
+	}
+
+	#endregion
+
+	#region 帮助方法
+
+	#endregion
 }
