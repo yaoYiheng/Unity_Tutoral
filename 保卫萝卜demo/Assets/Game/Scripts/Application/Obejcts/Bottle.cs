@@ -7,7 +7,8 @@ public class Bottle : Tower
 	 protected override void Attack()
 	 {
 		 //当攻击时, 实现攻击的动画
-		 m_Animator.SetTrigger("IsAttack");
+		//  m_Animator.SetTrigger("IsAttack");
+		base.Attack();
 
 		 //播放音效
 		 

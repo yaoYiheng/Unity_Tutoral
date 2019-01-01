@@ -13,6 +13,8 @@ public class StaticData : Singleton<StaticData>
     Dictionary<int, LuoboInfo> m_Luobos = new Dictionary<int, LuoboInfo>();
     Dictionary<int, WeaponInfo> m_Weapons = new Dictionary<int, WeaponInfo>();
 
+    Dictionary<int, BulletInfo> m_Bullet = new Dictionary<int, BulletInfo>();
+
     protected override void Awake()
     {
         base.Awake();
@@ -22,8 +24,15 @@ public class StaticData : Singleton<StaticData>
         InitLuoBo();
 
         InitWeapons();
+
+        InitBullets();
     }
 
+    void InitBullets()
+    {
+        m_Bullet.Add(0, new BulletInfo(){BulletID = 0, PrefabName = "BallBullet", BaseSpeed = 2.0f, BaseAttack = 3.0f});
+        m_Bullet.Add(1, new BulletInfo(){BulletID = 1, PrefabName = "FanBullet", BaseSpeed = 0.5f, BaseAttack = 3.0f});
+    }
     void InitWeapons()
     {
         m_Weapons.Add(0, new WeaponInfo(){WeaponID = 0, PrefabName = "Bottle", BasePrice = 1, NormalIcon = "Bottle/Bottle01", DisableIcon = "Bottle/Bottle00", MaxLevel = 3, AttactArea = 3.0f, FireRate = 1, BulletID = 0});

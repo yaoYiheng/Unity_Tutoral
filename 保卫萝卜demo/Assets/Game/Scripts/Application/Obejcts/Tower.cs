@@ -18,8 +18,9 @@ public abstract class Tower: Role
 	protected Animator m_Animator;
 	
 	GridInfo m_GridInfo;
-	Monster m_Target;
+	Monster m_Target = null;
 
+	float m_LastFireTime = 0f;
 	#endregion
 
 	#region 属性
@@ -73,11 +74,91 @@ public abstract class Tower: Role
 	}
 	protected virtual void Attack()
 	{
+		 m_Animator.SetTrigger("IsAttack");
+	}
 
+	void LookAtTarget(Monster target)
+	{
+		print("调用");
+		//如果目标为空.
+		if(target == null)
+		{
+			Vector3 angle = transform.eulerAngles;
+			angle.z = 0;
+			transform.eulerAngles = angle;
+		}
+		else
+		{
+			//计算目标与塔之间的矢量
+			Vector3 dis = (target.Position - transform.position).normalized;
+
+			//获取到该矢量的弧度, 并将该弧度转换成角度
+			float randians = Mathf.Atan2(dis.y, dis.x);
+
+			Vector3 angle = transform.eulerAngles;
+			angle.z = randians * Mathf.Rad2Deg;// - 90f;
+			transform.eulerAngles = angle;
+
+		}
 	}
 	#endregion
 
 	#region Unity回调
+	void Update()
+	{
+		//使炮塔始终朝着目标
+		LookAtTarget(m_Target);
+		//在每一帧的调用中判断Tower的目标
+		if(m_Target == null)//当目标为空时
+		{
+			//获取场景中的怪物
+			GameObject[] monsters = GameObject.FindGameObjectsWithTag("Monster");
+
+			//变量怪物数组, 将没有死亡且在攻击范围内的对象设置为攻击对象
+			foreach(GameObject m in monsters)
+			{
+				//在获取的游戏对象上, 获取到对应的组件
+				Monster monster = m.GetComponent<Monster>();
+
+				//计算怪物与当前炮塔的距离
+				float distance = Vector3.Distance(monster.transform.position, transform.position);
+
+				if (!monster.IsDead && distance < this.AttactArea)
+				{
+					//找到目标
+					m_Target = monster;
+					//跳出当前循环
+					break;	
+				}
+			}
+		}
+		else//当找到目标时
+		{
+			// 能来到该语句, 说明在上一帧中已经获取到了目标
+			// 在这一帧开始时, 还是需要判断, 在这一帧中 怪物是否死亡以及是否跑到攻击范围之外
+			float distance = Vector3.Distance(m_Target.transform.position, transform.position);
+			if(!m_Target.IsDead && distance > this.AttactArea)
+			{
+				//放弃目标
+				m_Target = null;
+				//返回
+				return;
+			}
+
+			//根据设定的开火速率对目标发起攻击
+			//下次攻击时间
+			float nextFire = m_LastFireTime + 1f / this.FireRate;
+			// 如果该时间满足条件则对怪物发动攻击
+			if(Time.time >= nextFire)
+			{
+				Attack();
+
+				//记录最后一次的攻击时间
+				m_LastFireTime = Time.time;
+			} 
+
+		}
+	}
 
 	#endregion
 
@@ -85,6 +166,8 @@ public abstract class Tower: Role
 	public override void OnSpawn()
 	{
 		m_Animator = GetComponent<Animator>();
+		//当出厂的时候, 就播放idle动画
+		// m_Animator.Play("Idle");
 	}
 	
 	public override void UnSpawn()

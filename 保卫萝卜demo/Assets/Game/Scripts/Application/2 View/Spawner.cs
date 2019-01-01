@@ -29,11 +29,17 @@ public class Spawner : View
 
     public void SpawnWeapon(SpawnWeaponArgs args)
     {
+        //从地图的引用中获取到格子信息
+        GridInfo grid = m_Map.GetGridInfo(args.Position);
+
         WeaponInfo info = Game.Instance.StaticData.GetWeaponInfo(args.TowerID);
         //从对象池中获取塔
         GameObject gameObject = Game.Instance.ObjectPool.OnSpawn(info.PrefabName);
         DontDestroyOnLoad(gameObject);
         gameObject.transform.position = args.Position;
+
+        Tower tower = gameObject.GetComponent<Tower>();
+        tower.Load(args.TowerID, grid);
     }
     public void SpawnerLuobo(Vector3 position)
     {

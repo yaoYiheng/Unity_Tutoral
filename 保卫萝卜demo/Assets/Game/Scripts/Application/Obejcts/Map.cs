@@ -384,6 +384,13 @@ public class Map : MonoBehaviour
             (-MapHeight / 2) + (grid.Y + 0.5f) * GridHeight,
             0));
     }
+    public GridInfo GetGridInfo(Vector3 position)
+    {
+        int x = (int)((position.x + MapWidth / 2) / GridWidth);
+        int y = (int)((position.y + MapHeight / 2) / GridHeight);
+
+        return GetGridByIndex(x, y);
+    }
 
 
     //根据格子索引号获得格子
@@ -424,11 +431,8 @@ public class Map : MonoBehaviour
         Vector3 mousePos = GetWorldPosition();
 
         //根据鼠标在世界坐标的位置计算出对应的格子的x, y值
+        return GetGridInfo(mousePos);
 
-        int x = (int)((mousePos.x + MapWidth / 2) / GridWidth);
-        int y = (int)((mousePos.y + MapHeight / 2) / GridHeight);
-
-        return GetGridByIndex(x, y);
     }
     #endregion
 
