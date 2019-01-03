@@ -11,7 +11,7 @@ public class WeaponInfo
 	public string DisableIcon;
 	public int MaxLevel;
 	public float AttactArea;
-	public int FireRate;
+	public float FireRate;
 	public int BulletID;
 
 

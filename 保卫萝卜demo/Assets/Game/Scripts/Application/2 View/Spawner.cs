@@ -39,7 +39,7 @@ public class Spawner : View
         gameObject.transform.position = args.Position;
 
         Tower tower = gameObject.GetComponent<Tower>();
-        tower.Load(args.TowerID, grid);
+        tower.Load(args.TowerID, grid, m_Map.MapRect);
     }
     public void SpawnerLuobo(Vector3 position)
     {
@@ -89,8 +89,22 @@ public class Spawner : View
     {
         
         GameModel gameModel = GetModel<GameModel>();
-        if(!gameModel.IsPlaying || !args.Grid.CanHold) return;
-        print("Map_OnGridClick");
+        print(gameModel.IsPlaying);
+        if(!gameModel.IsPlaying) return;
+
+        print(TowerPopup.Instance);
+        if(TowerPopup.Instance.IsShow)
+        {
+            SendEvent(Const.E_HideAllPanel);
+            return;
+        }
+        //不能放塔的格子, 不嘈杂
+        if(!args.Grid.CanHold) 
+        {
+            SendEvent(Const.E_HideAllPanel);
+            return;
+        }
+
         //如果是空格子, 则放置炮塔
         if(args.Grid.Data == null)
         {

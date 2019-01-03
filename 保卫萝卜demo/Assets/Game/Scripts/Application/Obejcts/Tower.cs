@@ -18,7 +18,8 @@ public abstract class Tower: Role
 	protected Animator m_Animator;
 	
 	GridInfo m_GridInfo;
-	Monster m_Target = null;
+	Monster m_Target = null;	
+
 
 	float m_LastFireTime = 0f;
 	#endregion
@@ -29,6 +30,7 @@ public abstract class Tower: Role
 
 	public int Price{get {return BasePrice * CurrentLevel;}}
 	public int BasePrice{get; private set;}
+	public Rect MapRect{get; private set;}
 
 	//当前等级
 	public int CurrentLevel
@@ -58,8 +60,9 @@ public abstract class Tower: Role
 	#endregion
 
 	#region 方法
-	public void Load(int towerID, GridInfo grid)
-	{
+	public void Load(int towerID, GridInfo grid, Rect rect)
+	{	
+		MapRect = rect;
 		//通过ID获取数据
 		WeaponInfo info = Game.Instance.StaticData.GetWeaponInfo(towerID);
 		this.MaxLevel = info.MaxLevel;
@@ -72,14 +75,17 @@ public abstract class Tower: Role
 		m_GridInfo = grid;
 
 	}
-	protected virtual void Attack()
+	protected virtual void Attack(Monster target)
 	{
 		 m_Animator.SetTrigger("IsAttack");
 	}
-
+	protected virtual void Awake()
+	{
+		m_Animator = GetComponent<Animator>();
+	}
 	void LookAtTarget(Monster target)
 	{
-		print("调用");
+
 		//如果目标为空.
 		if(target == null)
 		{
@@ -96,7 +102,7 @@ public abstract class Tower: Role
 			float randians = Mathf.Atan2(dis.y, dis.x);
 
 			Vector3 angle = transform.eulerAngles;
-			angle.z = randians * Mathf.Rad2Deg;// - 90f;
+			angle.z = randians * Mathf.Rad2Deg - 90f;
 			transform.eulerAngles = angle;
 
 		}
@@ -137,7 +143,7 @@ public abstract class Tower: Role
 			// 能来到该语句, 说明在上一帧中已经获取到了目标
 			// 在这一帧开始时, 还是需要判断, 在这一帧中 怪物是否死亡以及是否跑到攻击范围之外
 			float distance = Vector3.Distance(m_Target.transform.position, transform.position);
-			if(!m_Target.IsDead && distance > this.AttactArea)
+			if(m_Target.IsDead || distance > this.AttactArea)
 			{
 				//放弃目标
 				m_Target = null;
@@ -151,7 +157,7 @@ public abstract class Tower: Role
 			// 如果该时间满足条件则对怪物发动攻击
 			if(Time.time >= nextFire)
 			{
-				Attack();
+				Attack(m_Target);
 
 				//记录最后一次的攻击时间
 				m_LastFireTime = Time.time;

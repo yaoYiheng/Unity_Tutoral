@@ -25,7 +25,7 @@ public class WeaponIcon : MonoBehaviour
 		//根据是否足够设置对应的图片"file://" + Const.CardPath + cardInfo.CardName;
 		string path =  "Res/Roles/"  + (m_IsEnough? info.NormalIcon: info.DisableIcon);
 		// string path =  "Res/Maps/bg1";
-		print(path);
+
 		//根据路径获得图片
 		Sprite temps = Resources.Load<Sprite>(path);
 		m_Renderer.sprite = temps;

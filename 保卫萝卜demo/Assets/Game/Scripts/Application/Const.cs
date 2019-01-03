@@ -4,6 +4,11 @@ using UnityEngine;
  
 public static class Const 
 {
+
+    //参数
+    public const float ClosedDistance = 0.1f;
+    public const float RangeClosedDistance = 0.5f;
+
     //目录
     public static readonly string LevelPath = Application.dataPath + "/Game/Resources/Res/Levels/";
     public static readonly string MapPath = Application.dataPath + "/Game/Resources/Res/Maps/";

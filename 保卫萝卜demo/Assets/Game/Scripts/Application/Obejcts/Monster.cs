@@ -74,7 +74,10 @@ public class Monster : Role
 	{
 		return m_Path.Length - m_CurrentIndex >= 2;
 	}
+	protected override void OnDead(Role role)
+	{
 
+	}
 	#endregion
 
 	#region Unity回调
@@ -133,14 +136,12 @@ public class Monster : Role
 	public override void UnSpawn()
 	{
 		base.UnSpawn();
-		while (OnReached != null)
-		{
-			OnReached -= OnReached; 
-		}
+
 		this.IsReached = false;
 		this.MoveSpeed = 0;
 		this.m_CurrentIndex = -1;
 		this.m_Path = null;
+		this.OnReached = null;
 	}
 
 	#endregion

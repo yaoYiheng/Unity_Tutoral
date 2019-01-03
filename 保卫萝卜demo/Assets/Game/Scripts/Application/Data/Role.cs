@@ -22,7 +22,7 @@ public abstract class Role : ReusableObject, IReuseable
 	//是否已经死亡.
 	public bool IsDead
 	{
-		get{return m_CurrentHP == 0;}
+		get{return m_CurrentHP <= 0;}
 	}
 
 
@@ -51,7 +51,7 @@ public abstract class Role : ReusableObject, IReuseable
 				OnHealthPointChange(m_CurrentHP, MaxHP);
 
 			//如果血量为0, 则将发布死亡的事件.
-			if(m_CurrentHP == 0)
+			if(m_CurrentHP <= 0)
 			{
 				if(OnRoleDead != null)
 				{

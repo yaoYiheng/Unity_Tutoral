@@ -7,5 +7,5 @@ public class BulletInfo
 	public int BulletID;
 	public string PrefabName;
 	public float BaseSpeed;
-	public float BaseAttack;
+	public int BaseAttack;
 }

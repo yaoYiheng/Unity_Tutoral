@@ -51,7 +51,13 @@ public class Map : MonoBehaviour
 
 
     #region 属性
-
+    public Rect MapRect
+    {
+        get
+        {
+            return new Rect(-MapWidth / 2, -MapWidth / 2, MapWidth, MapHeight);
+        }
+    }
 
     public Level Level
     {

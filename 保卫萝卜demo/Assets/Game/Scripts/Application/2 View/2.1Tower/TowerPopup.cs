@@ -15,6 +15,12 @@ public class TowerPopup : View
 	#endregion
 
 	#region 字段
+	private static TowerPopup m_Instance;
+
+	public static TowerPopup Instance
+	{
+		get{return m_Instance;}
+	}
 	public CreatPanel m_CreatPanel;
 	public UpgradePanel m_UpgradePanel;
 	#endregion
@@ -28,6 +34,21 @@ public class TowerPopup : View
         }
     }
 
+	public bool IsShow
+	{
+		get
+		{
+			foreach (Transform item in transform)
+			{	
+				if(item.gameObject.activeSelf)
+				{
+					return true;
+				}
+	
+			}
+			return false;
+		}
+	}
 	#endregion
 
 	#region 方法
@@ -74,7 +95,10 @@ public class TowerPopup : View
 	#endregion
 
 	#region Unity回调
-
+	void Awake()
+	{
+		m_Instance = this;
+	}
 	#endregion
 
 	#region 事件回调

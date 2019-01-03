@@ -109,7 +109,7 @@ public class GameModel : Model
     public void StartLevel(int level)
     {
         m_PlayingLevelIndex = level;
-        m_IsPlaying = true;
+        // m_IsPlaying = true;
     }
 
     //关卡结束时, 进行统计, 有没有过关, 是否有必要检查存档.

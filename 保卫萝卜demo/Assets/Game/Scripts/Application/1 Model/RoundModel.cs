@@ -77,25 +77,34 @@ public class RoundModel : Model
 			Round round = m_Rounds[i];
 			for (int j = 0; j < round.Count; j++)
 			{
+								
+				//每一个怪物之间的间隔
+				yield return new WaitForSeconds(SPAWN_INTERVAL);
 				MonsterArgs mArgs = new MonsterArgs();
 				mArgs.MonsterID = round.MonsterID;
 
 				SendEvent(Const.E_SpawnMonster, mArgs);
 
+				// 当完成了最后一波的最后一个怪时, 就更改状态
+				if(i == m_Rounds.Count - 1 && j == round.Count - 1)
+				{
+					m_IsAllCompleted = true;
+				}
 
-				
-				//每一个怪物之间的间隔
-				yield return new WaitForSeconds(SPAWN_INTERVAL);
 			}
 			
-			m_CurrentRoundInex++;
-			if(i < m_Rounds.Count - 1)
-				//每一波怪物之间的间隔;
+			// m_CurrentRoundInex++; //2019.1.2修改bug时注释掉
+			// if(i < m_Rounds.Count - 1)
+			// 	//每一波怪物之间的间隔;
+			if(!m_IsAllCompleted)
+			{
 				yield return new WaitForSeconds(ROUND_INTERVAL);
+			}
+				
 		}
 
 
-		m_IsAllCompleted = true;
+
 
 
 	}
