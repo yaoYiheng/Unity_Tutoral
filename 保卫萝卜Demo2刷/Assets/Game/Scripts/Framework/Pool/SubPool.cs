@@ -18,9 +18,12 @@ public class SubPool
 	 {
 		 this.m_ObejctPrefab = go;
 	 }
-
+	public bool Contains(GameObject go)
+	{
+		return m_Objects.Contains(go);
+	}
 	//从池子中取出对象
-	public GameObject OnSpawn(GameObject goPrefab)
+	public GameObject OnSpawn()
 	{
 		GameObject go = null;
 
@@ -37,7 +40,7 @@ public class SubPool
 		//没有找到的话就创建新的
 		if(go == null)
 		{
-			go = GameObject.Instantiate<GameObject>(goPrefab);
+			go = GameObject.Instantiate<GameObject>(m_ObejctPrefab);
 			// 并将重新创建的游戏对象添加到列表当中
 			m_Objects.Add(go);
 
@@ -54,8 +57,8 @@ public class SubPool
 	{
 		if(m_Objects.Contains(go))
 		{
-			go.SetActive(false);
 			go.SendMessage("UnSpawn", SendMessageOptions.DontRequireReceiver);
+			go.SetActive(false);
 		}
 	}
 	//回收所有
