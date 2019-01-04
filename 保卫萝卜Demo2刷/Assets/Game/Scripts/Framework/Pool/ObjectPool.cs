@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ObjectPool
+public class ObjectPool: Singleton<ObjectPool>
 {
 	public string ResourcePath = "";
 
@@ -49,7 +49,7 @@ public class ObjectPool
 	void Register(string prefabName)
 	{
 		string path = "";
-		if(string.IsNullOrEmpty(prefabName))
+		if(string.IsNullOrEmpty(ResourcePath))
 		{
 			path = prefabName;
 		}

@@ -2,15 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ReusableObejct : MonoBehaviour {
+public abstract class ReusableObejct : MonoBehaviour, IReusable
+ {
+	 public abstract void OnSpawn();
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	 public abstract void UnSpawn();
+
 }
