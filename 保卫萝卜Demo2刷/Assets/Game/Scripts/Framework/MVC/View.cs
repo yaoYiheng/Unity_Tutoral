@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class View: MonoBehaviour
 {
+    [HideInInspector]
 	public List<string> AttentionEventList = new List<string>();
 	public abstract string Name {get;}
 

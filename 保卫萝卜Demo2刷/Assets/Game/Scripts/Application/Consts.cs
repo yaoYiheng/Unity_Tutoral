@@ -11,6 +11,7 @@ public static class Consts
 
     //视图
     public static string V_Start = "V_Start";
+    public static string V_Select = "V_Select";
 
     //控制器
 
