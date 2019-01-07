@@ -89,7 +89,14 @@
 -define:UNITY_EDITOR_OSX
 -define:ENABLE_NATIVE_ARRAY_CHECKS
 -define:UNITY_TEAM_LICENSE
+-define:ENABLE_VSTU
+'Assets/Game/Scripts/Application/Consts.cs'
+'Assets/Game/Scripts/Application/Data/GridInfo.cs'
+'Assets/Game/Scripts/Application/Data/Level.cs'
 'Assets/Game/Scripts/Application/Data/Point.cs'
+'Assets/Game/Scripts/Application/Data/Round.cs'
+'Assets/Game/Scripts/Application/Misc/Tools.cs'
+'Assets/Game/Scripts/Application/Objetcts/Map.cs'
 'Assets/Game/Scripts/Framework/MVC/ApplicationBase.cs'
 'Assets/Game/Scripts/Framework/MVC/Controller.cs'
 'Assets/Game/Scripts/Framework/MVC/MVC.cs'

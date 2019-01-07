@@ -45,24 +45,26 @@ public static class Tools
 		level.Background = xmlDocument.SelectSingleNode("Level/Background").InnerText;
 		level.Road = xmlDocument.SelectSingleNode("Level/Road").InnerText;
 		//将字符串数字转换成数字
-		level.InitGold = int.Parse(xmlDocument.SelectSingleNode("Level/CardImage").InnerText);
+		level.InitGold = int.Parse(xmlDocument.SelectSingleNode("Level/InitScore").InnerText);
 
 		//声明一个临时的子节点数组.
 		XmlNodeList nodeList;
-		nodeList = xmlDocument.SelectNodes("Level/Holder");
-
+		nodeList = xmlDocument.SelectNodes("Level/Holder/Point");
+        Debug.Log(nodeList.Count);
 
 		//为level对象下的可放置武器列表赋值
 		List<Point> tempList = new List<Point>();
 		//遍历赋值
 		for (int i = 0; i < nodeList.Count; i++)
 		{
+            System.Console.WriteLine(nodeList[i]);
+
 			Point tempPoint = new Point
 			(
 				int.Parse(nodeList[i].Attributes["X"].Value),
 				int.Parse(nodeList[i].Attributes["Y"].Value) 
 			);
-
+            System.Console.WriteLine(tempPoint);
 			//将各个点添加到列表当中
 			tempList.Add(tempPoint);
 		}
@@ -72,7 +74,7 @@ public static class Tools
 		//为level对象性的怪物路径列表赋值
 		List<Point> tempMonsterRoute = new List<Point>();
 
-		nodeList = xmlDocument.SelectNodes("Level/Path");
+		nodeList = xmlDocument.SelectNodes("Level/Path/Point");
 
 		for (int i = 0; i < nodeList.Count; i++)
 		{
@@ -92,7 +94,7 @@ public static class Tools
 		List<Round> tempRounds = new List<Round>();
 
 
-		nodeList = xmlDocument.SelectNodes("Level/Rounds");
+		nodeList = xmlDocument.SelectNodes("Level/Rounds/Round");
 
 		for (int i = 0; i < nodeList.Count; i++)
 		{
@@ -168,5 +170,25 @@ public static class Tools
 		writer.Close();
 
 	}
+
+
+    public static IEnumerator LoadImage(string url,SpriteRenderer renderer)
+    {
+        WWW www = new WWW(url);
+
+        while (!www.isDone)
+        {
+            yield return www;
+        }
+
+        Texture2D texture = www.texture;
+        Sprite sprite = Sprite.Create(
+            texture,
+            new Rect(0, 0, texture.width, texture.height),
+            new Vector2(0.5f, 0.5f));
+
+        renderer.sprite = sprite;
+
+    }
 }
 
