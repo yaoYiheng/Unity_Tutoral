@@ -50,7 +50,7 @@ public static class Tools
 		//声明一个临时的子节点数组.
 		XmlNodeList nodeList;
 		nodeList = xmlDocument.SelectNodes("Level/Holder/Point");
-        Debug.Log(nodeList.Count);
+
 
 		//为level对象下的可放置武器列表赋值
 		List<Point> tempList = new List<Point>();
@@ -120,6 +120,7 @@ public static class Tools
 	//将已经编辑好的Level类写入到文件中保存到本地.
 	public static void SaveLevel(string fileName, Level level)
 	{
+
 		//通过stringBuilder对level类进行拼接
 		StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.AppendLine("<?xml version=\"1.0\" encoding=\"utf-8\"?>");
@@ -150,6 +151,7 @@ public static class Tools
 			stringBuilder.AppendLine(string.Format("<Round Monster=\"{0}\" Count=\"{1}\"/>", level.Rounds[i].MonsterID, level.Rounds[i].Count));
 		}
 		stringBuilder.AppendLine("</Rounds>");
+        stringBuilder.AppendLine("</Level>");
 		
 		//将上面拼接的字符串转换成string对象
 		string content = stringBuilder.ToString();

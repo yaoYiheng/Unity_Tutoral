@@ -3,17 +3,30 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
+public class GridClickEventArgs: EventArgs
+{
+    public int MouseDown;
+    public GridInfo GridInfo;
+
+    public GridClickEventArgs(int id, GridInfo grid)
+    {
+        this.MouseDown = id;
+        this.GridInfo = grid;
+    }
+}
 
 //描述一个地图关卡的状态
 public class Map : MonoBehaviour 
 {
 
+
 	#region 常量
 	public const int RowCount = 8;
 	public const int ColoumCount =12;
-	#endregion
+    #endregion
 
-	#region 事件
+    #region 事件
+    public event EventHandler<GridClickEventArgs> OnGridClick;
 	#endregion
 
 	#region 字段
@@ -167,7 +180,7 @@ public class Map : MonoBehaviour
             if (item.CanHold)
             {
                 Vector3 tempPos = GetGridPosition(item);
-                print(tempPos);
+
                 Gizmos.DrawIcon(tempPos, "holder.png", true);
             }
         }
@@ -211,15 +224,74 @@ public class Map : MonoBehaviour
                 m_GridsList.Add(new GridInfo(j, i));
             }
         }
+
+        OnGridClick += Map_OnGridClick;
     }
-	#endregion
 
-	#region 事件回调
-	#endregion
+    private void Update()
+    {
 
-	#region 帮助方法
-	//计算地图与格子的大小
-	void Calculate()
+        //点击鼠标左键
+        if (Input.GetMouseButtonDown(0))
+        {
+            //获取到鼠标下的格子
+            GridInfo grid = GetGridByPosition(GetMousePosition());
+            if (OnGridClick != null)
+            {
+                OnGridClick(this, new GridClickEventArgs(0, grid));
+            }
+        }
+
+        //点击鼠标左键
+        if (Input.GetMouseButtonDown(1))
+        {
+            //获取到鼠标下的格子
+            GridInfo grid = GetGridByPosition(GetMousePosition());
+            if (OnGridClick != null)
+            {
+                OnGridClick(this, new GridClickEventArgs(1, grid));
+            }
+        }
+    }
+    #endregion
+
+    #region 事件回调
+
+    void Map_OnGridClick(object sender, GridClickEventArgs e)
+    {
+        if (Level == null)
+        {
+            return;
+        }
+
+
+        // 根据点击事件处理放置炮塔
+        if (e.MouseDown == 0 && !m_PathesList.Contains(e.GridInfo))
+        {
+            e.GridInfo.CanHold = !e.GridInfo.CanHold;
+        }
+
+        //鼠标点击的是右键, 且被点击的格子不是用于放置炮塔
+        if (e.MouseDown == 1 && !e.GridInfo.CanHold)
+        {
+            //如果被点击的点存在于路径数组中, 就将其移除, 反之则添加
+            if (m_PathesList.Contains(e.GridInfo))
+            {
+                m_PathesList.Remove(e.GridInfo);
+            }
+            else
+            {
+                m_PathesList.Add(e.GridInfo);
+            }
+        }
+    }
+
+
+    #endregion
+
+    #region 帮助方法
+    //计算地图与格子的大小
+    void Calculate()
 	{
 		//获取到视口坐标左上角与右下角对应的世界坐标
 		Vector3 leftDown = Camera.main.ViewportToWorldPoint(new Vector3(0, 0));
@@ -268,11 +340,13 @@ public class Map : MonoBehaviour
     public Vector3 GetMousePosition()
     {
         //先将屏幕上的坐标转换成视口坐标
-        Vector3 position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector3 position = Camera.main.ScreenToViewportPoint(Input.mousePosition);
 
         //再将视口坐标转换成鼠标所在的世界坐标
         Vector3 mousePosition = Camera.main.ViewportToWorldPoint(position);
 
+        print(mousePosition.x);
+        print(mousePosition.y);
         return mousePosition;
     }
 

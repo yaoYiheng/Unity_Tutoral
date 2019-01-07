@@ -92,7 +92,9 @@ public class MapEditor : Editor
         Level level = Map.Level;
 
 
-        List<Point> tempList = new List<Point>();
+        List<Point> tempList = null;
+
+        tempList = new List<Point>();
         // 将当前地图上的炮塔点 更新到level类中的可放置炮塔点
         for (int i = 0; i < Map.GridsList.Count; i++)
         {
@@ -104,11 +106,13 @@ public class MapEditor : Editor
                 tempList.Add(point);
             }
         }
+
         level.WeaponPos = tempList;
 
         //清零临时list
-        tempList.Clear();
 
+
+        tempList = new List<Point>();
         for (int i = 0; i < Map.PathsList.Count; i++)
         {
             //将在地图上的路径点放置到list中
@@ -119,8 +123,6 @@ public class MapEditor : Editor
         }
         level.MonsterRoute = tempList;
 
-        tempList.Clear();
-        tempList = null;
 
         //获取到当前正在编辑的level的文件名
         string fileName = m_FileList[m_SelectIndex].FullName;
@@ -172,6 +174,6 @@ public class MapEditor : Editor
     void Clear()
     {
         m_FileList.Clear();
-        m_SelectIndex = -1;
+        //m_SelectIndex = -1;
     }
 }

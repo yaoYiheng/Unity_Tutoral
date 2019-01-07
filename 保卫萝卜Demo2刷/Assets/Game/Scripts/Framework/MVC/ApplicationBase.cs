@@ -10,7 +10,7 @@ public abstract class ApplicationBase<T> : Singleton<T> where T: MonoBehaviour
 		MVC.RegisterController(name, controllerType);
 	}
 
-	protected void SendEvent(string eventName, object data)
+    protected void SendEvent(string eventName, object data = null)
 	{
 		MVC.SendEvent(eventName, data);
 	}
