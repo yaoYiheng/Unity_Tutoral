@@ -11,6 +11,9 @@ public class StartUpCommand : Controller
         // 注册数据
 
         // 注册控制器
+        RegisterController(Consts.E_StartLevel, typeof(StartLevelCommand));
+        RegisterController(Consts.E_EnterScene, typeof(EnterSceneCommand));
+        RegisterController(Consts.E_ExitScene, typeof(ExitSceneCommand));
 
 
         //数据的初始化

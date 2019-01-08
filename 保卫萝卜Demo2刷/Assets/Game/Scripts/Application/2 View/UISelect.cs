@@ -21,4 +21,11 @@ public class UISelect : View
     {
         Game.Instance.LoadScene(1);
     }
+
+    public void StartLevel()
+    {
+
+        StarLevelArgs args = new StarLevelArgs() { LevelCardIndex = 0 };
+        SendEvent(Consts.E_StartLevel, args);
+    }
 }

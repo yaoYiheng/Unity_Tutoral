@@ -13,6 +13,15 @@ public abstract class View: MonoBehaviour
 
 	public abstract void HandleEvent(string eventName, object data = null);
 
+    //获取到模型数据
+    protected T GetModel<T>() where T: Model
+    {
+        return MVC.GetModel<T>() as T;
+    }
 
+    protected void SendEvent(string eventName, object data = null)
+    {
+        MVC.SendEvent(eventName, data);
+    }
 	
 }

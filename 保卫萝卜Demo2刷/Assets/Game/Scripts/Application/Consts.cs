@@ -10,14 +10,25 @@ public static class Consts
 
 
     //视图
-    public static string V_Start = "V_Start";
-    public static string V_Select = "V_Select";
+    public const string V_Start = "V_Start";
+    public const string V_Select = "V_Select";
+    public const string V_Board = "V_Board";
+    public const string V_CountDown = "V_CountDown";
 
     //控制器
 
-    public static string E_StartUp = "E_StartUp"; //None Args
+    public const string E_StartUp = "E_StartUp"; //None Args
 
-    public static string E_EnterScene = "E_EnterScene"; //SceneIndexArgs
-    public static string E_ExitScene = "E_ExitScene";   //SceneIndexArgs
+    public const string E_EnterScene = "E_EnterScene"; //SceneIndexArgs
+    public const string E_ExitScene = "E_ExitScene";   //SceneIndexArgs
 
+
+    //开始关卡
+    public const string E_StartLevel = "E_StartLevel";
+}
+
+public enum GameSpeed
+{
+    SpeedOne,
+    SpeedTwo
 }
