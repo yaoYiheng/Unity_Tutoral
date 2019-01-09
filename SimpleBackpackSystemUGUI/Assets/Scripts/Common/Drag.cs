@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Drag: Item
 {
-    public int HealthPoint { get; private set; };
+    public int HealthPoint { get; private set; }
     public int ManaPoint { get; private set; }
 
 
