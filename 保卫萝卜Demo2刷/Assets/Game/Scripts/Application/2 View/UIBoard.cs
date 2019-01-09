@@ -121,52 +121,60 @@ public class UIBoard : View
 
     }
 
+    void InitGold(GameModel gameModel)
+    {
+        
+        Level level = gameModel.AllLevels[gameModel.CurrentPlayingIndex];
+        Gold = level.InitGold;
+    }
     #endregion
 
     #region Unity回调
-    private void Awake()
-    {
-
-    }
-
-    private void Start()
-    {
-        // 获取到各个组件的引用
-        m_GoldText = transform.Find("GoldText").GetComponent<Text>();
-        //Image
-        m_RoundInfo = transform.Find("RoundInfo").GetComponent<Image>();
-        m_PauseImage = transform.Find("PauseInfo").GetComponent<Image>();
-        //Text
-        m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
-        m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
-        //Button
-        m_ButtonSpeed1 = transform.Find("ButtonSpeed1").GetComponent<Button>();
-        m_ButtonSpeed2 = transform.Find("ButtonSpeed2").GetComponent<Button>();
-        m_ButtonPause = transform.Find("ButtonPause").GetComponent<Button>();
-        m_ButtonContinue = transform.Find("ButtonCoutinue").GetComponent<Button>();
-
-
-
-        IsPlaying = true;
-        Gold = 0;
-        GameSpeed = GameSpeed.SpeedOne;
-
-
-
-
-    }
-
-    private void Update()
-    {
-
-    }
     #endregion
 
     #region 事件回调
-
+    public override void AddEventToList()
+    {
+        AttentionEventList.Add(Consts.E_EnterScene);
+    }
     public override void HandleEvent(string eventName, object data = null)
     {
+        switch (eventName)
+        {
+            case Consts.E_EnterScene:
+                SceneIndexArgs args = data as SceneIndexArgs;
+                if (args.SceneIndex == 3)
+                {
+                    // 获取到各个组件的引用
+                    m_GoldText = transform.Find("GoldText").GetComponent<Text>();
+                    //Image
+                    m_RoundInfo = transform.Find("RoundInfo").GetComponent<Image>();
+                    m_PauseImage = transform.Find("PauseInfo").GetComponent<Image>();
+                    //Text
+                    m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
+                    m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
+                    //Button
+                    m_ButtonSpeed1 = transform.Find("ButtonSpeed1").GetComponent<Button>();
+                    m_ButtonSpeed2 = transform.Find("ButtonSpeed2").GetComponent<Button>();
+                    m_ButtonPause = transform.Find("ButtonPause").GetComponent<Button>();
+                    m_ButtonContinue = transform.Find("ButtonCoutinue").GetComponent<Button>();
 
+
+
+                    IsPlaying = true;
+
+
+                    GameModel game = GetModel<GameModel>();
+                    InitGold(game);
+                    GameSpeed = GameSpeed.SpeedOne;
+
+
+
+                }
+                break;
+            default:
+                break;
+        }
     }
 
     #endregion

@@ -71,7 +71,6 @@ public class UICountDown : View
     {
         m_Count = transform.Find("Count").GetComponent<Image>();
 
-        print(m_Count);
     }
     #endregion
 

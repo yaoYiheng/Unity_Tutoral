@@ -9,7 +9,7 @@ public class StartUpCommand : Controller
     public override void Excute(object data)
     {
         // 注册数据
-
+        RegisterModel(new GameModel());
         // 注册控制器
         RegisterController(Consts.E_StartLevel, typeof(StartLevelCommand));
         RegisterController(Consts.E_EnterScene, typeof(EnterSceneCommand));
@@ -17,6 +17,8 @@ public class StartUpCommand : Controller
 
 
         //数据的初始化
+        GameModel game = GetModel<GameModel>();
+        game.Init();
 
 
         //场景的第一跳

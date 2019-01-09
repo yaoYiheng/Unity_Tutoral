@@ -7,7 +7,11 @@ public static class Consts
 {
 	public static string LevelPath = Application.dataPath + @"/Game/Resources/Res/Levels";
     public static string MapPath = Application.dataPath + @"/Game/Resources/Res/Maps/";
+    public static string CardPath = Application.dataPath + @"/Game/Resources/Res/Cards/";
 
+    //数据
+    public const string M_GameModel = "M_GameModel";
+    public const string GameProgress = "GameProgress";
 
     //视图
     public const string V_Start = "V_Start";

@@ -4,6 +4,8 @@ using System.IO;
 using UnityEngine;
 using System.Text;
 using System.Xml;
+using UnityEngine.UI;
+
 public static class Tools
 {
 	// 从资源目录中加载所有的XML文件到内存.
@@ -190,6 +192,24 @@ public static class Tools
             new Vector2(0.5f, 0.5f));
 
         renderer.sprite = sprite;
+
+    }
+    public static IEnumerator LoadImage(string url, Image image)
+    {
+        WWW www = new WWW(url);
+
+        while (!www.isDone)
+        {
+            yield return www;
+        }
+
+        Texture2D texture = www.texture;
+        Sprite sprite = Sprite.Create(
+            texture,
+            new Rect(0, 0, texture.width, texture.height),
+            new Vector2(0.5f, 0.5f));
+
+        image.sprite = sprite;
 
     }
 }

@@ -8,6 +8,8 @@ public class StartLevelCommand : Controller
     {
         StarLevelArgs args = data as StarLevelArgs;
 
+        GameModel game = GetModel<GameModel>();
+        game.StartLevel(args.LevelCardIndex);
         Game.Instance.LoadScene(3);
     }
 }
