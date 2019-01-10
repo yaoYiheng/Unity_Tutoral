@@ -1,0 +1,14 @@
+{
+  "ProjectFilePath": "/Users/yiheng/Documents/Unity相关/Unity项目/_Tutorial_TipAndTricks/Unity_Tutoral/SimpleBackpackSystemUGUI/Assembly-CSharp.csproj",
+  "TargetFramework": "v3.5",
+  "TagHelpers": [],
+  "Configuration": {
+    "ConfigurationName": "UnsupportedRazor",
+    "LanguageVersion": "1.0",
+    "Extensions": [
+      {
+        "ExtensionName": "UnsupportedRazorExtension"
+      }
+    ]
+  }
+}

@@ -13,8 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 560
-    y: 113
+    x: 1
+    y: 45
     width: 1363
     height: 1395
   m_ShowMode: 4
@@ -43,7 +43,7 @@ MonoBehaviour:
     y: 0
     width: 1363
     height: 1395
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &3
 MonoBehaviour:
@@ -90,7 +90,7 @@ MonoBehaviour:
   m_MinSize: {x: 713, y: 492}
   m_MaxSize: {x: 18008, y: 14042}
   vertical: 0
-  controlID: 126
+  controlID: 108
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -134,7 +134,7 @@ MonoBehaviour:
   m_MinSize: {x: 202, y: 342}
   m_MaxSize: {x: 4002, y: 8042}
   vertical: 1
-  controlID: 127
+  controlID: 109
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -158,7 +158,7 @@ MonoBehaviour:
   m_MinSize: {x: 234, y: 492}
   m_MaxSize: {x: 10004, y: 14042}
   vertical: 1
-  controlID: 82
+  controlID: 64
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -337,9 +337,9 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 1
     y: 94
-    width: 792
+    width: 796
     height: 667
   m_ViewPositions:
     m_KeySerializationHelper: []
@@ -411,8 +411,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 560
-    y: 850
+    x: 1
+    y: 782
     width: 796
     height: 636
   m_MaximizeOnPlay: 0
@@ -487,8 +487,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1360
-    y: 162
+    x: 801
+    y: 94
     width: 284
     height: 666
   m_TreeViewState:
@@ -540,8 +540,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1648
-    y: 162
+    x: 1089
+    y: 94
     width: 275
     height: 1324
   m_ScrollPosition: {x: 0, y: 0}
@@ -573,8 +573,8 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1360
-    y: 849
+    x: 801
+    y: 781
     width: 284
     height: 637
   m_SearchFilter:
@@ -588,7 +588,7 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 2
     m_Folders:
-    - Assets/Game/Scripts/Application
+    - Assets/Game/Scripts/Application/Misc
   m_ViewMode: 0
   m_StartGridSize: 51
   m_LastFolders: []
@@ -624,7 +624,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 1316.5973}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000fc240000322500005225000058250000762500008c250000c8250000e42500005e260000642600006e26000078260000102700002627000064270000d82700002c280000702800008e280000fe28000012290000722900009c2900009e290000b6290000322a0000c42a0000ca2a0000dc2a0000142b0000462b0000
@@ -704,8 +704,8 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 560
-    y: 162
+    x: 1
+    y: 94
     width: 796
     height: 667
   m_SceneLighting: 1

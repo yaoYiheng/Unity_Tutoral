@@ -48,13 +48,17 @@ public class InventoryGrid: MonoBehaviour {
     private void Awake()
     {
         m_CountText = transform.Find("CountText").GetComponent<Text>();
-        ItemCount = 1;
+        ItemCount = 0;
         ItemID = 0;
     }
 
-    public void UpdateGrid(int itemID, int count = 1)
+    public void UpdateGrid(int itemID, int count)
     {
         ItemID = itemID;
+        ItemCount += count;
+    }
+    public void AddItem(int count = 1)
+    {
         ItemCount += count;
     }
 }
