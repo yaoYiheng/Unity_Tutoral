@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class Item 
 {
-    public int ItemID { get; private set; }  //物品ID
-    public string Icon { get; private set; } //icon
-    public string Name { get; private set; } // 物品名称
-    public string Descrition { get; private set; } //描述
-    public int SellPrice { get; private set; }
-    public int BuyPrice { get; private set; }
-    public ItemType Type { get; protected set; }
+    public int ItemID { get;  set; }  //物品ID
+    public string Icon { get;  set; } //icon
+    public string Name { get;  set; } // 物品名称
+    public string Descrition { get;  set; } //描述
+    public int SellPrice { get;  set; }
+    public int BuyPrice { get;  set; }
+    public ItemType Type { get; set; }
 
-    public Item(int id, string icon, string name, string des, int sell, int buy)
+    public Item(){}
+    public Item(int id, string icon, string name, string des,ItemType type, int sell, int buy)
     {
         this.ItemID = id;
         this.Icon = icon;

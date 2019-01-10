@@ -4,13 +4,21 @@ using UnityEngine;
 
 public class Weapon : Item
 {
-    public int Damage { get; private set; }
-    public float Range { get; private set; }
-    public Weapon(int id, string icon, string name, string des, int sell, int buy, int damage, float range)
-        : base(id, icon, name, des, sell, buy)
+    public Weapon(int id, string icon, string name, string des, ItemType type, int sell, int buy, int damage, float range) : base(id, icon, name, des, type, sell, buy)
     {
-        base.Type = ItemType.Weapon;
+        base.Type = type;
         this.Damage = damage;
         this.Range = range;
     }
+
+    public Weapon(){}
+    public int Damage { get; set; }
+    public float Range { get; set; }
+    //public Weapon(int id, string icon, string name, string des, int sell, int buy, ItemType type, int damage, float range)
+    //    : base(id, icon, name, des, sell, buy)
+    //{
+    //    base.Type = type;
+    //    this.Damage = damage;
+    //    this.Range = range;
+    //}
 }
