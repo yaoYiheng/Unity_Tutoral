@@ -10,12 +10,12 @@ public class StartUpCommand : Controller
     {
         // 注册数据
         RegisterModel(new GameModel());
+        RegisterModel(new RoundModel());
         // 注册控制器
         RegisterController(Consts.E_StartLevel, typeof(StartLevelCommand));
         RegisterController(Consts.E_EnterScene, typeof(EnterSceneCommand));
         RegisterController(Consts.E_ExitScene, typeof(ExitSceneCommand));
-
-
+        RegisterController(Consts.E_CountDownCompleted, typeof(CoundDownCompleteCommand));
         //数据的初始化
         GameModel game = GetModel<GameModel>();
         game.Init();

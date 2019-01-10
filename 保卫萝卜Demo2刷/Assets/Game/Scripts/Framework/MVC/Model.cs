@@ -8,6 +8,6 @@ public abstract class Model
 
 	protected virtual void SendEvent(string name, object data = null)
 	{
-		
+		MVC.SendEvent(name, data);
 	}
 }

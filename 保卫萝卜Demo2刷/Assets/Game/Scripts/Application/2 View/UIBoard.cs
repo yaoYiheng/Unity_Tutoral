@@ -96,7 +96,7 @@ public class UIBoard : View
     public void LoadRoundInfo(int current, int total)
     {
         m_CurrentText.text = current.ToString("D2");
-        m_TotalText.text = total.ToString();
+        m_TotalText.text = total.ToString("D2");
     }
     public void PauseBtnClick()
     {
@@ -136,6 +136,7 @@ public class UIBoard : View
     public override void AddEventToList()
     {
         AttentionEventList.Add(Consts.E_EnterScene);
+        AttentionEventList.Add(Consts.E_StartRound);
     }
     public override void HandleEvent(string eventName, object data = null)
     {
@@ -152,7 +153,7 @@ public class UIBoard : View
                     m_PauseImage = transform.Find("PauseInfo").GetComponent<Image>();
                     //Text
                     m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
-                    m_CurrentText = transform.Find("RoundInfo/Current").GetComponent<Text>();
+                    m_TotalText = transform.Find("RoundInfo/Total").GetComponent<Text>();
                     //Button
                     m_ButtonSpeed1 = transform.Find("ButtonSpeed1").GetComponent<Button>();
                     m_ButtonSpeed2 = transform.Find("ButtonSpeed2").GetComponent<Button>();
@@ -172,6 +173,11 @@ public class UIBoard : View
 
                 }
                 break;
+            case Consts.E_StartRound:
+            StartRoundArgs ar = data as StartRoundArgs;
+            LoadRoundInfo(ar.CurrentRound, ar.TotalRounds);
+            break;
+
             default:
                 break;
         }

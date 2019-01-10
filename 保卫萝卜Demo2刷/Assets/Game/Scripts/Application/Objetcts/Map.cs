@@ -323,7 +323,7 @@ public class Map : MonoBehaviour
 		//计算index
 		int index = gridX + gridY * ColoumCount;
 
-        print(index);
+
 		//判断index是否越界
 		if(index < 0 || index >= m_GridsList.Count - 1)
         {

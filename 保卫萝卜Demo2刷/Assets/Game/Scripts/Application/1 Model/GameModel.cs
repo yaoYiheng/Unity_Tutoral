@@ -53,6 +53,7 @@ public class GameModel : Model
     public int CurrentPlayingIndex { get { return m_CurrentPlayingIndex; }}
     //是否已经完成初始化
     public bool IsInit { get { return m_IsInit; } set { m_IsInit = value; }}
+    public Level CurrerntLevel { get { return m_Levels[CurrentPlayingIndex]; }}
 
     #endregion
 
@@ -73,7 +74,7 @@ public class GameModel : Model
             m_Levels.Add(level);
         }
         //读取游戏当前进度
-        m_GameProgress = Saver.GetGameProgress();
+        m_GameProgress = 4;//Saver.GetGameProgress();
 
         IsInit = true;
     }

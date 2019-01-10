@@ -61,6 +61,7 @@ public class UICountDown : View
         //隐藏倒计时页面
         this.Hide();
         //发布倒计时完成事件.
+        SendEvent(Consts.E_CountDownCompleted);
 
 
     }
@@ -86,7 +87,7 @@ public class UICountDown : View
         {
             case Consts.E_EnterScene:
                 SceneIndexArgs args = data as SceneIndexArgs;
-                print(args.SceneIndex);
+
                 if (args.SceneIndex == 3)
                 {
                     StartCountDown();
