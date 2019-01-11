@@ -18,7 +18,7 @@ public class KnapsackController : MonoBehaviour
         itemInfo.Count += count;
 
         //动态加载物品UI
-        GameObject itemPrefab = Resources.Load<GameObject>("Prefabs/InventoryItem");
+        //GameObject itemPrefab = Resources.Load<GameObject>("Prefabs/InventoryItem");
 
         //找到可用格子
         InventoryGrid grid = Inventory.Instance.GetAvaliableGrid(itemId);
@@ -40,23 +40,24 @@ public class KnapsackController : MonoBehaviour
             }
             else
             {
+                grid.ItemID = itemId;
                 grid.UpdateGrid(itemId, count);
-                GameObject itemGo = Instantiate(itemPrefab);
-                //设置格子的父对象
-                itemGo.transform.SetParent(grid.transform);
-                itemGo.transform.localPosition = Vector3.zero;
-                itemGo.transform.localScale = Vector3.one;
+                //GameObject itemGo = Instantiate(itemPrefab);
+                ////设置格子的父对象
+                //itemGo.transform.SetParent(grid.transform);
+                //itemGo.transform.localPosition = Vector3.zero;
+                //itemGo.transform.localScale = Vector3.one;
 
-                InventoryItem item = itemGo.GetComponent<InventoryItem>();
+                //InventoryItem item = itemGo.GetComponent<InventoryItem>();
 
-                item.Icon = itemInfo.Icon;
+                //item.Icon = itemInfo.Icon;
             }
 
 
         }
 
         //将添加的物品保存到数据中.
-        ItemModel.AddItem(itemId);
+        //ItemModel.AddItem(itemId);
 
     }
 

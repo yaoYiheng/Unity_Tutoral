@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System;
 
-public class InventoryGrid : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler,
+public class InventoryGrid : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, 
 IDragHandler, IEndDragHandler
 
 {
@@ -57,6 +57,29 @@ IDragHandler, IEndDragHandler
         set
         {
             m_ItemID = value;
+            if(value == 0)
+            {
+                ItemCount = 0;
+            }
+            else
+            {
+                ItemCount = 0;
+                Item itemInfo = StaticData.Instance.GetItem(value);
+
+                ItemCount = itemInfo.Count;
+                GameObject itemGo = Instantiate(Resources.Load<GameObject>("Prefabs/InventoryItem"));
+                //GameObject itemGo = Instantiate(itemPrefab);
+                //设置格子的父对象
+                itemGo.transform.SetParent(this.transform);
+                itemGo.transform.localPosition = Vector3.zero;
+                itemGo.transform.localScale = Vector3.one;
+
+                InventoryItem item = itemGo.GetComponent<InventoryItem>();
+
+                item.Icon = itemInfo.Icon;
+                ItemModel.AddItem(value);
+
+            }
 
 
         }
@@ -101,8 +124,8 @@ IDragHandler, IEndDragHandler
     }
     public void UpdateGrid(int itemID, int count = 1)
     {
-        ItemID = itemID;
-        ItemCount += count;
+        m_ItemID = itemID;
+        //m_ItemCount += count;
     }
     public void AddItem(int count = 1)
     {
@@ -124,6 +147,7 @@ IDragHandler, IEndDragHandler
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (eventData.pointerEnter == null) return;
         if (eventData.pointerEnter.tag == "Grid")
         {
             if (OnExit != null)
@@ -152,7 +176,7 @@ IDragHandler, IEndDragHandler
 
             //获取到拖拽格子下的物品
             Item item = StaticData.Instance.GetItem(ItemID);
-            print(ItemID);
+
             //更新临时的格子
             TempInventoryItem.Instance.Icon = item.Icon;
 
@@ -194,7 +218,9 @@ IDragHandler, IEndDragHandler
             if(tempGrid.ItemID == 0)
             {
 
-                Creat(tempGrid, ItemID);
+                //Creat(tempGrid, ItemID);
+
+                tempGrid.ItemID = ItemID;
 
                 ItemID = 0;
                 ItemCount = 0;
@@ -212,11 +238,11 @@ IDragHandler, IEndDragHandler
 
             InventoryGrid tempGrid = tempItem.transform.parent.GetComponent<InventoryGrid>();
 
-            //int tempGridID = tempGrid.ItemID;
-            //int currentID = m_ItemID;
+            int tempGridID = tempGrid.ItemID;
 
-            //tempGrid.ItemCount = 0;
-            //this.ItemCount = 0;
+
+            tempGrid.ItemID = this.ItemID;
+            this.ItemID = tempGridID;
 
 
         }
@@ -224,22 +250,8 @@ IDragHandler, IEndDragHandler
 
 
     }
-    void Creat(InventoryGrid tempGrid, int itemID, int count = 1)
-    {
-        tempGrid.UpdateGrid(ItemID);
-        Item itemInfo = StaticData.Instance.GetItem(ItemID);
-        itemInfo.Count += count;
-        GameObject itemGo = Instantiate(Resources.Load<GameObject>("Prefabs/InventoryItem"));
-        //GameObject itemGo = Instantiate(itemPrefab);
-        //设置格子的父对象
-        itemGo.transform.SetParent(tempGrid.transform);
-        itemGo.transform.localPosition = Vector3.zero;
-        itemGo.transform.localScale = Vector3.one;
 
-        InventoryItem item = itemGo.GetComponent<InventoryItem>();
 
-        item.Icon = itemInfo.Icon;
-        tempGrid.ItemCount = ItemCount;
-    }
+
     #endregion
 }
