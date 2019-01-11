@@ -14,13 +14,16 @@ public class TempInventoryItem : Singleton<TempInventoryItem>
             string path = "file://" + Consts.IconPath + value;
 
 
-            m_Icon = GetComponent<Image>();
-
-
             StartCoroutine(Tools.LoadImage(path, m_Icon));
 
 
         }
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
+        m_Icon = GetComponent<Image>();
     }
 
     public void Show()

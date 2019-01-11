@@ -137,9 +137,11 @@ IDragHandler, IEndDragHandler
 
     public void OnDrag(PointerEventData eventData)
     {
-        if (ItemID == 0) return;
         IsOnDrag = true;
-        
+        if (ItemID == 0) return;
+
+
+
         if (eventData.pointerEnter == null)
         {
             return;
@@ -150,7 +152,7 @@ IDragHandler, IEndDragHandler
 
             //获取到拖拽格子下的物品
             Item item = StaticData.Instance.GetItem(ItemID);
-
+            print(ItemID);
             //更新临时的格子
             TempInventoryItem.Instance.Icon = item.Icon;
 
@@ -162,27 +164,7 @@ IDragHandler, IEndDragHandler
 
     }
 
-    public void OnDrop(PointerEventData eventData)
-    {
-        
-    }
 
-    void Creat(InventoryGrid tempGrid, int itemID)
-    {
-        tempGrid.UpdateGrid(ItemID);
-        Item itemInfo = StaticData.Instance.GetItem(ItemID);
-        GameObject itemGo = Instantiate(Resources.Load<GameObject>("Prefabs/InventoryItem"));
-        //GameObject itemGo = Instantiate(itemPrefab);
-        //设置格子的父对象
-        itemGo.transform.SetParent(tempGrid.transform);
-        itemGo.transform.localPosition = Vector3.zero;
-        itemGo.transform.localScale = Vector3.one;
-
-        InventoryItem item = itemGo.GetComponent<InventoryItem>();
-
-        item.Icon = itemInfo.Icon;
-        tempGrid.ItemCount = ItemCount;
-    }
     public void OnEndDrag(PointerEventData eventData)
     {
 
@@ -225,12 +207,39 @@ IDragHandler, IEndDragHandler
         }
         else if(eventData.pointerEnter.tag == "Item")
         {
-            print("aaa");
+
+            InventoryItem tempItem = eventData.pointerEnter.transform.GetComponent<InventoryItem>();
+
+            InventoryGrid tempGrid = tempItem.transform.parent.GetComponent<InventoryGrid>();
+
+            //int tempGridID = tempGrid.ItemID;
+            //int currentID = m_ItemID;
+
+            //tempGrid.ItemCount = 0;
+            //this.ItemCount = 0;
+
 
         }
 
 
 
+    }
+    void Creat(InventoryGrid tempGrid, int itemID, int count = 1)
+    {
+        tempGrid.UpdateGrid(ItemID);
+        Item itemInfo = StaticData.Instance.GetItem(ItemID);
+        itemInfo.Count += count;
+        GameObject itemGo = Instantiate(Resources.Load<GameObject>("Prefabs/InventoryItem"));
+        //GameObject itemGo = Instantiate(itemPrefab);
+        //设置格子的父对象
+        itemGo.transform.SetParent(tempGrid.transform);
+        itemGo.transform.localPosition = Vector3.zero;
+        itemGo.transform.localScale = Vector3.one;
+
+        InventoryItem item = itemGo.GetComponent<InventoryItem>();
+
+        item.Icon = itemInfo.Icon;
+        tempGrid.ItemCount = ItemCount;
     }
     #endregion
 }
