@@ -2,23 +2,36 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : Singleton<Inventory> {
 
 
-    private static InventoryGrid[] m_Grids;
+    private InventoryGrid[] m_Grids;
 
-    private void Awake()
+    public bool IsEmpty()
     {
+
+        foreach (var item in m_Grids)
+        {
+            if (item.ItemID != 0)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    protected override void Awake()
+    {
+        base.Awake();
         m_Grids = transform.GetComponentsInChildren<InventoryGrid>();
-
-
     }
 
     /// <summary>
     /// 返回可用的格子.
     /// </summary>
     /// <returns>The avaliable grid.</returns>
-    public static InventoryGrid GetAvaliableGrid(int itemID)
+    public InventoryGrid GetAvaliableGrid(int itemID)
     {
         InventoryGrid temp = null;
 
@@ -38,11 +51,6 @@ public class Inventory : MonoBehaviour {
 
             }
         }
-
-
-
-
-
 
         return temp;
     }

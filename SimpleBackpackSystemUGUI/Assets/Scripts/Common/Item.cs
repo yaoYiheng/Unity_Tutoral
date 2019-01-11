@@ -12,6 +12,8 @@ public class Item
     public int BuyPrice { get;  set; }
     public ItemType Type { get; set; }
 
+    public int Count { get; set; }
+
     public Item(){}
     public Item(int id, string icon, string name, string des,ItemType type, int sell, int buy)
     {

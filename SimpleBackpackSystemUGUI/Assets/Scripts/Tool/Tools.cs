@@ -22,4 +22,14 @@ public static class Tools
         image.sprite = sprite;
 
     } 
+    public static void GetMousePosition(out Vector2 position)
+    {
+        RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            GameObject.Find("KnapsackUI").transform as RectTransform,
+            Input.mousePosition,
+            null,
+            out position
+        );
+
+    }
 }
