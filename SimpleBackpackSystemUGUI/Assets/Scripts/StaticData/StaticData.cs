@@ -14,11 +14,11 @@ public class StaticData : Singleton<StaticData>
     protected override void Awake()
     {
         base.Awake();
-        InitWeapon();
+        InitItem();
     }
 
 
-    void InitWeapon()
+    void InitItem()
     {
         m_Items.Add(2016, new Weapon() { ItemID = 2016, Icon = "rod-icon.png", Name = "火柴棍", Descrition = "这是一根小火柴", Type = ItemType.Weapon, SellPrice = 100, BuyPrice = 80, Damage = 10, Range = 3.0f });
         m_Items.Add(2017, new Weapon() { ItemID = 2017, Icon = "rod-icon02.png", Name = "金属棍", Descrition = "金属棍, 打断你的狗腿信不信", Type = ItemType.Weapon, SellPrice = 100, BuyPrice = 80, Damage = 10, Range = 3.0f });
