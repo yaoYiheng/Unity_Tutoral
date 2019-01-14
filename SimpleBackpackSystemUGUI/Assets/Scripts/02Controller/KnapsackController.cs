@@ -41,7 +41,7 @@ public class KnapsackController : MonoBehaviour
             else
             {
                 grid.ItemID = itemId;
-                grid.UpdateGrid(itemId, count);
+                //grid.UpdateGrid(itemId, count);
                 //GameObject itemGo = Instantiate(itemPrefab);
                 ////设置格子的父对象
                 //itemGo.transform.SetParent(grid.transform);
@@ -95,6 +95,10 @@ public class KnapsackController : MonoBehaviour
 
     }
 
+
+    public void AddItem()
+    {
+    }
     void InventoryGrid_OnDragAction(int obj)
     {
         

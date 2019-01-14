@@ -345,8 +345,7 @@ public class Map : MonoBehaviour
         //再将视口坐标转换成鼠标所在的世界坐标
         Vector3 mousePosition = Camera.main.ViewportToWorldPoint(position);
 
-        print(mousePosition.x);
-        print(mousePosition.y);
+
         return mousePosition;
     }
 

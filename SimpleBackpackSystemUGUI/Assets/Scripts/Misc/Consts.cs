@@ -4,5 +4,5 @@ using UnityEngine;
 
 public static class Consts 
 {
-    public static readonly string IconPath = Application.dataPath + @"/Resources/Icon/";
+    public static readonly string IconPath = Application.streamingAssetsPath + "/Icon/";
 }

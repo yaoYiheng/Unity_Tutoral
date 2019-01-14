@@ -43,6 +43,7 @@ IDragHandler, IEndDragHandler
             {
                 m_CountText.gameObject.SetActive(true);
                 m_CountText.text = value.ToString();
+                ItemModel.Delete(ItemID);
             }
         }
     }
@@ -162,7 +163,11 @@ IDragHandler, IEndDragHandler
     public void OnDrag(PointerEventData eventData)
     {
         IsOnDrag = true;
-        if (ItemID == 0) return;
+        if (ItemID == 0)
+        {
+            TempInventoryItem.Instance.Hide();
+            return;
+        }
 
 
 
@@ -179,6 +184,8 @@ IDragHandler, IEndDragHandler
 
             //更新临时的格子
             TempInventoryItem.Instance.Icon = item.Icon;
+
+
 
         }
         else
@@ -199,14 +206,19 @@ IDragHandler, IEndDragHandler
         //不能对一个空格子进行拖拽
         if (ItemID == 0)
         {
+  
             return;
         }//如果拖到外界, 则删除
         else if (eventData.pointerEnter == null)
         {
+            print(ItemID);
+
             ItemID = 0;
-            ItemCount = 0;
+            //ItemCount = 0;
 
             ItemModel.Delete(ItemID);
+
+
 
 
         }//如果拖到的是一个空格子
