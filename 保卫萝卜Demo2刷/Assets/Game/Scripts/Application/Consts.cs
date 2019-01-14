@@ -5,9 +5,9 @@ using System;
 
 public static class Consts
 {
-	public static string LevelPath = Application.dataPath + @"/Game/Resources/Res/Levels";
-    public static string MapPath = Application.dataPath + @"/Game/Resources/Res/Maps/";
-    public static string CardPath = Application.dataPath + @"/Game/Resources/Res/Cards/";
+    public static string LevelPath = Application.streamingAssetsPath + @"/Levels";
+    public static string MapPath = Application.streamingAssetsPath + @"/Maps/";
+    public static string CardPath = Application.streamingAssetsPath + @"/Cards/";
 
     //数据
     public const string M_GameModel = "M_GameModel";
