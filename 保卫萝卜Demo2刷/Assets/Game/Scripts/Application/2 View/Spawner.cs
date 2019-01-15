@@ -31,7 +31,23 @@ public class Spawner : View
     #region 方法
     public void SpawnMonster(int monsterID)
     {
-        Debug.Log("正在出" + monsterID);
+        
+        string monsterName = "Monster" + monsterID;
+        Debug.Log("正在出" + monsterName);
+
+        GameObject monsterGo = Game.Instance.ObjectPool.OnSpawn(monsterName);
+
+        DontDestroyOnLoad(monsterGo);
+
+        //获取到挂在对象上的脚本组件, 对相关事件以及所需数据进行绑定与赋值
+        Monster monster = monsterGo.GetComponent<Monster>();
+        //monster.Reach += Monster_Reach;
+        monster.Dead += Monster_Dead;
+        monster.HealthChange += Monster_HealthChange;
+
+        //加载怪物所行走的路径.
+        monster.LoadPath(m_Map.MonsterPath);
+
     }
     #endregion
 
@@ -49,6 +65,21 @@ public class Spawner : View
 
 
     }
+    //怪物掉血
+    void Monster_HealthChange(int arg1, int arg2)
+    {
+    }
+
+    //怪物死亡
+    void Monster_Dead(Role obj)
+    {
+    }
+
+    //怪物到达目的地
+    void Monster_Reach(Monster obj)
+    {
+    }
+
 
     public override void HandleEvent(string eventName, object data = null)
     {

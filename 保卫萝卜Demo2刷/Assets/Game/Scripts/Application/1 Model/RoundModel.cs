@@ -19,22 +19,22 @@ public class RoundModel : Model
     //当前回合
     int m_CurrentRoundIndex = -1;
 
-    int m_TotalRounds;
+
     bool m_IsCompleted = false;
 
-    IEnumerator m_RoundCoroutine;
+    //IEnumerator m_RoundCoroutine;
 
 
     #endregion
 
     #region 属性
-    public IEnumerator RoundCoroutine
-    {
-        get
-        {
-            return m_RoundCoroutine;
-        }
-    }
+    //public IEnumerator RoundCoroutine
+    //{
+    //    get
+    //    {
+    //        return m_RoundCoroutine;
+    //    }
+    //}
 
     public int TotalRounds
     {

@@ -42,3 +42,14 @@ public enum GameSpeed
     SpeedOne,
     SpeedTwo
 }
+
+public enum MonsterType
+{
+    monsterOne,
+    monsterTwo,
+    monsterThree,
+    monsterFour,
+    mouserFive,
+    monsterSix,
+    monsterSeven
+}
