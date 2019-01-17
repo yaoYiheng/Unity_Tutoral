@@ -84,7 +84,7 @@ public class Monster : Role
     private void Update()
     {
         //如果已经到达了目的地就返回
-        print("当前索引" + m_CurrentIndex);
+
         if (m_IsReached) return;
 
         // 判断当前点与目的地的距离

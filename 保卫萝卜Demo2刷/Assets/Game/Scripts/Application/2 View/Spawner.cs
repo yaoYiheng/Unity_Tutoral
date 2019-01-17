@@ -67,7 +67,7 @@ public class Spawner : View
     {
         
         string monsterName = "Monster" + monsterID;
-        Debug.Log("正在出" + monsterName);
+
 
         GameObject monsterGo = Game.Instance.ObjectPool.OnSpawn(monsterName);
 

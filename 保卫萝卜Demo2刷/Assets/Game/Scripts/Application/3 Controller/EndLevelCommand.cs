@@ -9,8 +9,10 @@ public class EndLevelCommand : Controller
 
         //接受游戏的参数, 根据是否赢来显示不同的页面
         EndLevelArgs endLevelArgs = data as EndLevelArgs;
+
         GameModel gameModel = GetModel<GameModel>();
         RoundModel roundModel = GetModel<RoundModel>();
+
         gameModel.EndLevel(endLevelArgs.IsWin);
         roundModel.PauseRound();
 
