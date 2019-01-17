@@ -61,7 +61,7 @@ public abstract class Role : ReusableObejct, IReusable
             }
 
             // 如果血量为0, 发布死亡事件
-            if (m_CurrentHP == 0)
+            if (m_CurrentHP <= 0)
             {
                 if(Dead != null)
                 {

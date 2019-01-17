@@ -33,9 +33,12 @@ public class ObjectPool: Singleton<ObjectPool>
 		 foreach (SubPool item in m_Pools.Values)
 		 {	
 			if(item.Contains(go))
-				pool = item; 
+            {
+                
+                pool = item; 
+                break;  
+            }
 
-			break;	
 		 }
 		 pool.UnSpawn(go);
 	}

@@ -18,6 +18,8 @@ public class EnterSceneCommand : Controller
                 RegisterView(spawner);
                 RegisterView(GameObject.Find("UIBoard").GetComponent<UIBoard>());
                 RegisterView(GameObject.Find("UICountDown").GetComponent<UICountDown>());
+                RegisterView(GameObject.Find("Canvas").transform.Find("UIWin").GetComponent<UIWin>());
+                RegisterView(GameObject.Find("Canvas").transform.Find("UILost").GetComponent<UILost>());
                 break;
             default:
                 break;

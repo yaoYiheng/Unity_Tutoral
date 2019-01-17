@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubPool: MonoBehaviour
+public class SubPool
 {
 	GameObject m_ObejctPrefab;
 	List<GameObject> m_Objects = new List<GameObject>();
@@ -53,7 +53,7 @@ public class SubPool: MonoBehaviour
 		//没有找到的话就创建新的
 		if(go == null)
 		{
-			go = Instantiate<GameObject>(m_ObejctPrefab);
+            go = GameObject.Instantiate<GameObject>(m_ObejctPrefab);
 			// 并将重新创建的游戏对象添加到列表当中
 			m_Objects.Add(go);
 

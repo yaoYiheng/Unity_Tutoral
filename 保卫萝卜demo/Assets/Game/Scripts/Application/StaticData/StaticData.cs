@@ -40,7 +40,7 @@ public class StaticData : Singleton<StaticData>
     }
     void InitLuoBo()
     {
-        m_Luobos.Add(0, new LuoboInfo(){LuoboID = 0, HealthPoint = 4});
+        m_Luobos.Add(0, new LuoboInfo(){LuoboID = 0, HealthPoint = 10});
     }
         void InitMosterInfo()
     {

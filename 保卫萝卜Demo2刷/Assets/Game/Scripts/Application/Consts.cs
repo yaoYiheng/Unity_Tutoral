@@ -20,6 +20,8 @@ public static class Consts
     public const string V_Board = "V_Board";
     public const string V_CountDown = "V_CountDown";
     public const string V_Spawner = "V_Spawner";
+    public const string V_Win = "V_Win";
+    public const string V_Lost = "V_Lost";
 
     //控制器
 
@@ -35,6 +37,10 @@ public static class Consts
 
     //开始关卡
     public const string E_StartLevel = "E_StartLevel";
+    public const string E_EndLevel = "E_EndLevel";
+
+    //怪物死亡
+    public const string E_MonsterDead = "E_MonsterDead";
 }
 
 public enum GameSpeed

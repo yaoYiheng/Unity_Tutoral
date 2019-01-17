@@ -26,10 +26,11 @@ public class Monster : Role
 
     int m_CurrentIndex = -1;
 
-
+    int m_MonsterID;
     #endregion
 
     #region 属性
+    public int MonsterID{ get { return m_MonsterID; }}
     #endregion
 
     #region 方法
@@ -139,6 +140,7 @@ public class Monster : Role
         MonsterInfo monsterInfo = StaticData.Instance.GetMonsterInfo((int)MonsterType);
 
         // 当前血量是基于最大血量, 需要先设置最大血量
+        m_MonsterID = monsterInfo.MonsterID;
         this.MaxHP = monsterInfo.HealthPoint;
         this.CurrentHP = monsterInfo.HealthPoint;
 

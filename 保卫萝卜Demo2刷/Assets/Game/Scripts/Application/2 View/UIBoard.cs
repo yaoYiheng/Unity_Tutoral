@@ -93,6 +93,11 @@ public class UIBoard : View
     #endregion
 
     #region 方法
+    private void UpdateGold()
+    {
+        GameModel gameModel = GetModel<GameModel>();
+        m_GoldText.text = gameModel.Gold.ToString();
+    }
     public void LoadRoundInfo(int current, int total)
     {
         m_CurrentText.text = current.ToString("D2");
@@ -125,6 +130,7 @@ public class UIBoard : View
     {
         
         Level level = gameModel.AllLevels[gameModel.CurrentPlayingIndex];
+
         Gold = level.InitGold;
     }
     #endregion
@@ -137,6 +143,7 @@ public class UIBoard : View
     {
         AttentionEventList.Add(Consts.E_EnterScene);
         AttentionEventList.Add(Consts.E_StartRound);
+        AttentionEventList.Add(Consts.E_MonsterDead);
     }
     public override void HandleEvent(string eventName, object data = null)
     {
@@ -178,6 +185,9 @@ public class UIBoard : View
             LoadRoundInfo(ar.CurrentRound, ar.TotalRounds);
             break;
 
+            case Consts.E_MonsterDead:
+                UpdateGold();
+                break;
             default:
                 break;
         }

@@ -51,7 +51,7 @@ public class Luobo : Role
 		base.OnSpawn();
 
 		m_Animator = GetComponent<Animator>();
-		m_Animator.Play("Idle");
+		m_Animator.Play("Luobo_Idle");
 		LuoboInfo luobo = Game.Instance.StaticData.GetLuoBoInfo();
 		this.MaxHP = luobo.HealthPoint;
 		this.CurrentHP = luobo.HealthPoint;

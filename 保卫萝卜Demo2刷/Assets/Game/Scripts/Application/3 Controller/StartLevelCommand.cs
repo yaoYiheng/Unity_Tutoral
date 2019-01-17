@@ -11,6 +11,9 @@ public class StartLevelCommand : Controller
         GameModel game = GetModel<GameModel>();
         game.StartLevel(args.LevelCardIndex);
 
+        //初始化金币
+        game.Gold = game.AllLevels[game.CurrentPlayingIndex].InitGold;
+
         //开始游戏回合
         RoundModel roundModel = GetModel<RoundModel>();
         //从游戏数据中, 加载当前关卡

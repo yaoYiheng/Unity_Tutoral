@@ -160,7 +160,7 @@ public class Spawner : View
     void Luobo_OnRoleDead(Role role)
     {
         //回收萝卜
-        Game.Instance.ObjectPool.UnSpawn(role.gameObject);
+        //Game.Instance.ObjectPool.UnSpawn(role.gameObject);
         GameModel gameModel = GetModel<GameModel>();
         SendEvent(Const.E_EndLevel, new EndLevelArgs(){LevelIndex = gameModel.PlayingLevelIndex, IsSuccessed = false});
     }

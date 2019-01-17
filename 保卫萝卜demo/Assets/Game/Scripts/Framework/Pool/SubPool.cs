@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SubPool : MonoBehaviour 
+public class SubPool  
 {
     GameObject ObjPrefab;
     List<GameObject> GameObjectList = new List<GameObject>();
@@ -40,7 +40,7 @@ public class SubPool : MonoBehaviour
         if(item == null)
         {
             //根据传递的prefab创建新的游戏对象, 并添加到列表中
-            item = Instantiate<GameObject>(ObjPrefab);
+            item = GameObject.Instantiate<GameObject>(ObjPrefab);
 
             GameObjectList.Add(item);
         }
