@@ -22,7 +22,7 @@ public class RoundModel : Model
 
     bool m_IsCompleted = false;
 
-    //IEnumerator m_RoundCoroutine;
+    Coroutine m_RoundCoroutine;
 
 
     #endregion
@@ -73,11 +73,12 @@ public class RoundModel : Model
     public void StartRound()
     {
         // m_RoundCoroutine = RunRound();
-        Game.Instance.StartCoroutine(RunRound());
+        Game.Instance.StopAllCoroutines();
+        m_RoundCoroutine = Game.Instance.StartCoroutine(RunRound());
     }
     public void PauseRound()
     {
-        Game.Instance.StopCoroutine(RunRound());
+        Game.Instance.StopCoroutine(m_RoundCoroutine);
     }
 
     IEnumerator RunRound()

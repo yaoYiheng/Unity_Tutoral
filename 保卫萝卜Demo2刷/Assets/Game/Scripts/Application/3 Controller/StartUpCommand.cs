@@ -16,6 +16,7 @@ public class StartUpCommand : Controller
         RegisterController(Consts.E_EnterScene, typeof(EnterSceneCommand));
         RegisterController(Consts.E_ExitScene, typeof(ExitSceneCommand));
         RegisterController(Consts.E_CountDownCompleted, typeof(CoundDownCompleteCommand));
+        RegisterController(Consts.E_EndLevel, typeof(EndLevelCommand));
         //数据的初始化
         GameModel game = GetModel<GameModel>();
         game.Init();

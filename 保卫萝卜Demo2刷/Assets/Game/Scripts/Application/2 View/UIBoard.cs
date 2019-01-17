@@ -74,6 +74,14 @@ public class UIBoard : View
             m_GameSpeed = value;
             m_ButtonSpeed1.gameObject.SetActive(value == GameSpeed.SpeedOne);
             m_ButtonSpeed2.gameObject.SetActive(value == GameSpeed.SpeedTwo);
+            if (value == GameSpeed.SpeedOne)
+            {
+                Time.timeScale = 1f;
+            }
+            else
+            {
+                Time.timeScale = 2f;
+            }
         }
     }
 

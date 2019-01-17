@@ -18,6 +18,8 @@ public class RoundModel : Model
 	List<Round> m_Rounds = new List<Round>();
 	int m_CurrentRoundInex = -1;
 	bool m_IsAllCompleted = false;
+
+	Coroutine m_Coroutine;
 	#endregion
 
 	#region 属性
@@ -50,11 +52,11 @@ public class RoundModel : Model
 	public void StartRound()
 	{
 		Debug.Log("开始出怪");
-		Game.Instance.StartCoroutine(RunRound());
+		m_Coroutine = Game.Instance.StartCoroutine(RunRound());
 	}
 	public void EndRound()
 	{
-		Game.Instance.StopCoroutine(RunRound());
+		Game.Instance.StopCoroutine(m_Coroutine);
 	}
 
 	//通过携程发送出怪的事件

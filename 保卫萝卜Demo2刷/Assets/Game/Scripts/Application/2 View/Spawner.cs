@@ -56,7 +56,7 @@ public class Spawner : View
     void Luobo_Dead(Role obj)
     {
         //print("spawner");
-        //Game.Instance.ObjectPool.UnSpawn(obj.gameObject);
+        Game.Instance.ObjectPool.UnSpawn(obj.gameObject);
         GameModel gameModel = GetModel<GameModel>();
         //发送事件
         SendEvent(Consts.E_EndLevel, new EndLevelArgs() { IsWin = false, EndLevelIndex = gameModel.CurrentPlayingIndex });
@@ -108,11 +108,17 @@ public class Spawner : View
     // 需要添加金币
     void Monster_Dead(Role obj)
     {
-        Monster monster = obj as Monster;
-        MonsterInfo info = StaticData.Instance.GetMonsterInfo(monster.MonsterID);
 
         GameModel gameModel = GetModel<GameModel>();
-        gameModel.Gold += info.Gold;
+
+        if(!m_Luobo.IsDead)
+        {
+            Monster monster = obj as Monster;
+            MonsterInfo info = StaticData.Instance.GetMonsterInfo(monster.MonsterID);
+
+            gameModel.Gold += info.Gold;
+     
+        }
 
         SendEvent(Consts.E_MonsterDead);
 
