@@ -26,7 +26,7 @@ public class UIBoard : View
     private Button m_ButtonSpeed2;
     private Button m_ButtonPause;
     private Button m_ButtonContinue;
-
+    private Button m_ButtonMenu;
 
     private bool m_IsPlaying = false;
 
@@ -59,6 +59,9 @@ public class UIBoard : View
 
             m_ButtonContinue.gameObject.SetActive(value);
             m_RoundInfo.gameObject.SetActive(value);
+
+
+            SendEvent(Consts.E_Suspend, new SuspendArgs() { IsSuspend = !value });
         }
     }
 
@@ -114,10 +117,13 @@ public class UIBoard : View
     public void PauseBtnClick()
     {
         IsPlaying = true;
+        Time.timeScale = 1;
+
     }
     public void ContinueBtnClick()
     {
         IsPlaying = false;
+        Time.timeScale = 0;
     }
 
     public void SpeedOneBtnClick()
@@ -132,6 +138,8 @@ public class UIBoard : View
     public void MenuBtnClick()
     {
 
+        SendEvent(Consts.E_MenuShow);
+        Time.timeScale = 0;
     }
 
     void InitGold(GameModel gameModel)

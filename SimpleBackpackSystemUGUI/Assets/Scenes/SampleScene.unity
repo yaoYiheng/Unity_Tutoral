@@ -379,6 +379,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -502,6 +513,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (14)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -627,6 +649,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (35)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -746,6 +779,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -864,6 +908,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (15)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -1211,6 +1266,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -1329,6 +1395,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -1449,6 +1526,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -1567,6 +1655,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -1692,6 +1791,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (26)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -1811,6 +1921,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (11)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -1929,6 +2050,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -2074,6 +2206,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -2192,6 +2335,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (17)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -2337,6 +2491,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -2456,6 +2621,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -2574,6 +2750,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -2776,6 +2963,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -2899,6 +3097,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -3029,6 +3238,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -3147,6 +3367,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -3395,6 +3626,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -3514,6 +3756,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -3632,6 +3885,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -3757,6 +4021,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -3875,6 +4150,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -3999,6 +4285,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (32)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -4134,6 +4431,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -4173,7 +4481,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 6971.071, y: -2672.0889}
-  m_SizeDelta: {x: -5120, y: -3620}
+  m_SizeDelta: {x: -5120, y: -8886.4375}
   m_Pivot: {x: -0.19380695, y: 1.0920131}
 --- !u!114 &1549082726
 MonoBehaviour:
@@ -4439,6 +4747,17 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -4637,6 +4956,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -4755,6 +5085,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -4896,7 +5237,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1735984190}
   m_HandleRect: {fileID: 1735984189}
   m_Direction: 2
-  m_Value: 0.9999998
+  m_Value: 0.9999997
   m_Size: 0.5885386
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -5063,6 +5404,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -5372,6 +5724,17 @@ Prefab:
       propertyPath: m_Name
       value: InventoryGrid (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -5500,6 +5863,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
   m_IsPrefabAsset: 0
@@ -5618,6 +5992,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
@@ -5881,6 +6266,17 @@ Prefab:
     - target: {fileID: 1835792388317212, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}
       propertyPath: m_Name
       value: InventoryGrid (19)
+      objectReference: {fileID: 0}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c82300b23a7c541699e9623be84a65fc,
+        type: 3}
+    - target: {fileID: 114977082204325254, guid: 5b23e1650febf4221b3645f8f65b32b5,
+        type: 2}
+      propertyPath: m_Type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b23e1650febf4221b3645f8f65b32b5, type: 2}

@@ -55,6 +55,7 @@ public class Map : MonoBehaviour
     public Level Level { get { return m_Level; } }
     public List<GridInfo> GridsList { get { return m_GridsList; }}
     public List<GridInfo> PathsList { get { return m_PathesList; }}
+    public Rect GetRect { get { return new Rect(-m_MapWidth / 2, -m_MapHeight, m_MapWidth, m_MapHeight); } }
     //获得怪物行走路径的世界坐标的集合
     public Vector3[] MonsterPath 
     {
@@ -259,6 +260,11 @@ public class Map : MonoBehaviour
 
     void Map_OnGridClick(object sender, GridClickEventArgs e)
     {
+
+        //当前场景不是LevelBuilder不能编辑
+        if (gameObject.scene.name != "LevelBuilder")
+            return;
+
         if (Level == null)
         {
             return;
@@ -327,7 +333,7 @@ public class Map : MonoBehaviour
 		//判断index是否越界
 		if(index < 0 || index >= m_GridsList.Count - 1)
         {
-            throw new IndexOutOfRangeException("格子索引越界");
+            return null;
 
         }
 		

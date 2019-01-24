@@ -24,10 +24,13 @@ public class RoundModel : Model
 
     Coroutine m_RoundCoroutine;
 
+    //bool m_Restarted = false;
 
     #endregion
 
     #region 属性
+
+    public bool Restarted;
     //public IEnumerator RoundCoroutine
     //{
     //    get
@@ -63,17 +66,25 @@ public class RoundModel : Model
             return Consts.M_RoundModel;
         }
     }
+
+
     #endregion
 
     #region 方法
+
+    public void RestartRound()
+    {
+        m_CurrentRoundIndex = -1;
+        m_IsCompleted = false;
+        PauseRound();
+    }
     public void LoadRounds(Level level)
     {
         m_Rounds = level.Rounds;
     }
     public void StartRound()
     {
-        // m_RoundCoroutine = RunRound();
-        Game.Instance.StopAllCoroutines();
+
         m_RoundCoroutine = Game.Instance.StartCoroutine(RunRound());
     }
     public void PauseRound()

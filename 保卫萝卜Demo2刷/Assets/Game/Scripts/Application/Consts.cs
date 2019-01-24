@@ -22,6 +22,8 @@ public static class Consts
     public const string V_Spawner = "V_Spawner";
     public const string V_Win = "V_Win";
     public const string V_Lost = "V_Lost";
+    public const string V_TowerPopup = "V_TowerPopup";
+    public const string V_Menu = "V_Menu";
 
     //控制器
 
@@ -34,6 +36,7 @@ public static class Consts
 
     public const string E_StartRound = "E_StartRound";
     public const string E_SpawnMonster = "E_SpawnMonster";
+    public const string E_SpawnTower = "E_SpawnTower"; //SpawnTowerArgs
 
     //开始关卡
     public const string E_StartLevel = "E_StartLevel";
@@ -41,6 +44,20 @@ public static class Consts
 
     //怪物死亡
     public const string E_MonsterDead = "E_MonsterDead";
+    //创建炮塔
+    public const string E_CreatPanel = "E_CreatPanel";
+
+    //显示创建炮塔页面
+    public const string E_ShowCreatPanel = "E_ShowCreatPanel";
+    //显示升级炮塔 页面
+    public const string E_ShowUpgradePanel = "E_ShowUpgradePanel";
+
+    //隐藏所有页面
+    public const string E_HideAllPanels = "E_HideAllPanels";
+
+    public const string E_Suspend = "E_Suspend";
+    public const string E_MenuShow = "E_MenuShow";
+    public const string E_RestartRound = "E_RestartRound";
 }
 
 public enum GameSpeed

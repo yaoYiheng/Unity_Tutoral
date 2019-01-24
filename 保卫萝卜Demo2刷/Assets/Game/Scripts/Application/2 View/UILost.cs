@@ -50,11 +50,16 @@ public class UILost : View
 
     public void OnRestartClick()
     {
+        RoundModel roundModel = GetModel<RoundModel>();
+
         GameModel game = GetModel<GameModel>();
         // SendEvent(Const.E_StartLevel, new StartLevelArgs(){LevelIndex = game.PlayingLevelIndex});
         StarLevelArgs e = new StarLevelArgs();
         e.LevelCardIndex = game.CurrentPlayingIndex;
         SendEvent(Consts.E_StartLevel, e);
+
+        //发送重新开始游戏事件
+        SendEvent(Consts.E_RestartRound);
     }
     #endregion
 

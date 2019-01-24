@@ -63,7 +63,7 @@ public class KnapsackController : MonoBehaviour
 
     private void Update()
     {
-        CreatItemRandomly();
+        //CreatItemRandomly();
 
 
         Vector2 position;
@@ -78,8 +78,7 @@ public class KnapsackController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.A))
         {
             //产生随机数
-            int random = Random.Range(2016, 2023);
-            StoreItem(random, 1);
+
         }
     }
 
@@ -98,6 +97,9 @@ public class KnapsackController : MonoBehaviour
 
     public void AddItem()
     {
+        //CreatItemRandomly();
+        int random = Random.Range(2016, 2023);
+        StoreItem(random, 1);
     }
     void InventoryGrid_OnDragAction(int obj)
     {

@@ -16,6 +16,7 @@ public class StartLevelCommand : Controller
 
         //开始游戏回合
         RoundModel roundModel = GetModel<RoundModel>();
+
         //从游戏数据中, 加载当前关卡
         roundModel.LoadRounds(game.CurrerntLevel);
         Game.Instance.LoadScene(3);

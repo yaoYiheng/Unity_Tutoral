@@ -6,12 +6,20 @@ public class StaticData : Singleton<StaticData>
 {
     Dictionary<int, MonsterInfo> m_Monsters = new Dictionary<int, MonsterInfo>();
     Dictionary<int, LuoboInfo> m_Luobo = new Dictionary<int, LuoboInfo>();
+    Dictionary<int, TowerInfo> m_Towers = new Dictionary<int, TowerInfo>();
 
     protected override void Awake()
     {
         base.Awake();
         InitMonsters();
         InitLuobo();
+        InitTower();
+    }
+
+    void InitTower()
+    {
+        m_Towers.Add(0, new TowerInfo() { TowerID = 0, PrefabName = "Bottle", NormalName = "Bottle/Bottle01", DisableName = "Bottle/Bottle00", AttackArea = 4, SpeedRate = 2.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
+        m_Towers.Add(1, new TowerInfo() { TowerID = 1, PrefabName = "Fan",    NormalName = "Fan/Fan01",       DisableName = "Fan/Fan00",       AttackArea = 4, SpeedRate = 2.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
     }
 
     void InitMonsters()
@@ -40,5 +48,10 @@ public class StaticData : Singleton<StaticData>
     public MonsterInfo GetMonsterInfo(int monsterId)
     {
         return m_Monsters[monsterId];
+    }
+
+    public TowerInfo GetTowerInfo(int towerID)
+    {
+        return m_Towers[towerID];
     }
 }

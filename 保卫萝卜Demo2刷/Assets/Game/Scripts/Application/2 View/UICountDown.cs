@@ -46,7 +46,7 @@ public class UICountDown : View
 
     IEnumerator StartCD()
     {
-        int count = 3;
+        int count = 4;
         while (count > 0)
         {
 

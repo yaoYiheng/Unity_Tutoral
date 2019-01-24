@@ -10,6 +10,8 @@ public class CoundDownCompleteCommand : Controller
         Debug.Log("开始出怪");
 
         //回合开始
+        GameModel gameModel = GetModel<GameModel>();
+        gameModel.IsPlaying = true;
         RoundModel roundModel = GetModel<RoundModel>();
         roundModel.StartRound();
     }

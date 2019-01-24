@@ -83,6 +83,24 @@ public class Spawner : View
         monster.LoadPath(m_Map.MonsterPath);
 
     }
+    void SpawnTower(SpawnTowerArgs spawnTowerArgs)
+    {
+        print("来?");
+        //获取格子
+        GridInfo gridInfo = m_Map.GetGridByPosition(spawnTowerArgs.Position);
+        
+        TowerInfo towerInfo = Game.Instance.StaticData.GetTowerInfo(spawnTowerArgs.TowerID);
+
+        GameObject towerGo = Game.Instance.ObjectPool.OnSpawn(towerInfo.PrefabName);
+        DontDestroyOnLoad(towerGo);
+        Tower tower = towerGo.GetComponent<Tower>();
+        tower.transform.position = spawnTowerArgs.Position;
+
+        tower.LoadData(spawnTowerArgs.TowerID, gridInfo, m_Map.GetRect);
+
+        gridInfo.data = tower;
+
+    }
     #endregion
 
     #region Unity回调
@@ -96,6 +114,8 @@ public class Spawner : View
         AttentionEventList.Add(Consts.E_EnterScene);
         //倒计时结束
         AttentionEventList.Add(Consts.E_SpawnMonster);
+        // 生成炮塔
+        AttentionEventList.Add(Consts.E_SpawnTower);
 
 
     }
@@ -149,6 +169,52 @@ public class Spawner : View
         obj.CurrentHP = 0;
     }
 
+    //地图上的格子被点击的时候.
+    void M_Map_OnGridClick(object sender, GridClickEventArgs e)
+    {
+        print("点击");
+        // 游戏未开始时, 不能相应点击
+        GameModel gameModel = GetModel<GameModel>();
+        if (!gameModel.IsPlaying) return;
+
+        if (e.GridInfo == null)
+        {
+            return;
+        }
+        // 当场上的格子不能放置炮塔时, 不相应点击事件
+        if (!e.GridInfo.CanHold) 
+        {
+            SendEvent(Consts.E_HideAllPanels);
+            return;
+        }
+            // 当格子被点击时, 有交互菜单时, 隐藏场上所有菜单
+        if (TowerPopup.Instance.IsPanelShow())
+        {
+            //TowerPopup.Instance.HideAllPanels();
+            SendEvent(Consts.E_HideAllPanels);
+            return;
+        }
+           
+
+        //如果被点击的格子是空格子, 发送出显示创建炮塔的消息
+        if (e.GridInfo.data == null)
+        {
+            CreatPanelArgs creatPanelArgs = new CreatPanelArgs()
+            {
+                Position = m_Map.GetGridPosition(e.GridInfo),
+                IsUpside = e.GridInfo.Y < Map.RowCount / 2
+            };
+            SendEvent(Consts.E_ShowCreatPanel, creatPanelArgs);
+        }
+        //如果给点击的格子已有数据, 则发送升级炮塔的消息
+        else
+        {
+            print("来这里?");
+        }
+       
+
+    }
+
 
 
     public override void HandleEvent(string eventName, object data = null)
@@ -161,7 +227,7 @@ public class Spawner : View
                 {
                    //进入到第三场景时, 给地图赋值;
                    m_Map = GetComponent<Map>();
-
+                    m_Map.OnGridClick += M_Map_OnGridClick;
                    //从游戏数据中获取到当前正在玩的关卡的level, 
                    //同时地图也需要level中的数据
                    GameModel gameModel = GetModel<GameModel>();
@@ -178,6 +244,11 @@ public class Spawner : View
                 SpawnMonsterArgs monsterArgs = data as SpawnMonsterArgs;
 
                 SpawnMonster(monsterArgs.MonsterID);
+
+                break;
+            case Consts.E_SpawnTower:
+                SpawnTowerArgs spawnTowerArgs = data as SpawnTowerArgs;
+                SpawnTower(spawnTowerArgs);
 
                 break;
             default:

@@ -82,7 +82,7 @@ public class GameModel : Model
     //当游戏开始的时候, 标记游戏开始.记录当前开始的是那一关卡
     public void StartLevel(int level)
     {
-        IsPlaying = true;
+        //IsPlaying = true;
         m_CurrentPlayingIndex = level;
     }
 
