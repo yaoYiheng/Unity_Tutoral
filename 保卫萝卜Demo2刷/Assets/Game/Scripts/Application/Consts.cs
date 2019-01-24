@@ -9,6 +9,11 @@ public static class Consts
     public static string MapPath = Application.streamingAssetsPath + @"/Maps/";
     public static string CardPath = Application.streamingAssetsPath + @"/Cards/";
 
+
+
+    public const float CloseDistance = 0.1f;
+    public const float CloseRange = 0.7f;
+
     //数据
     public const string M_GameModel = "M_GameModel";
     public const string M_RoundModel = "M_RoundModel";

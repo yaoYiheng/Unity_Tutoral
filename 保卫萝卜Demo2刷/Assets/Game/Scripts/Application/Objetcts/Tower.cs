@@ -15,7 +15,7 @@ public abstract class Tower : ReusableObejct
     //动画组件
     Animator m_Animator;
     //当前等级
-    int m_CurrentLevel;
+    int m_Level;
     //目标
     Monster m_Target;
     //计时器
@@ -31,7 +31,7 @@ public abstract class Tower : ReusableObejct
     public float AttackRate { get; private set;}
 
     public int BasePrice { get; private set; }
-    public int Price { get { return BasePrice * CurrentLevel; } }
+    public int Price { get { return BasePrice * Level; } }
 
     public int AttackArea { get; private set; }
 
@@ -44,17 +44,19 @@ public abstract class Tower : ReusableObejct
 
     //设置当前等级
     //并且根据当前等级设置炮塔大小.
-    public int CurrentLevel
+
+    public int Level
     {
         get
         {
-            return m_CurrentLevel;
+            return m_Level;
         }
 
         set
         {
-            m_CurrentLevel = Mathf.Clamp(value, 0, MaxLevel);
-            transform.localScale = Vector3.one * (1 + 0.25f * m_CurrentLevel);
+            m_Level = Mathf.Clamp(value, 0, MaxLevel);
+
+            transform.localScale = Vector3.one * (1 + 0.25f * m_Level);
         }
     }
 
@@ -66,8 +68,10 @@ public abstract class Tower : ReusableObejct
 
     public void LoadData(int towerID, GridInfo gridInfo, Rect mapRect)
     {
+
         //通过ID获取tower的数据并赋值
         TowerInfo towerInfo = Game.Instance.StaticData.GetTowerInfo(towerID);
+        MaxLevel = towerInfo.MaxLevel;
         this.AttackArea = towerInfo.AttackArea;
         this.AttackRate = towerInfo.SpeedRate;
         this.BasePrice = towerInfo.BasePrice;
@@ -76,11 +80,12 @@ public abstract class Tower : ReusableObejct
         this.MapRect = mapRect;
         this.GridInfo = gridInfo;
 
-        this.CurrentLevel = 1;
+        Level = 1;
     }
 
     public virtual void Attack(Monster monster)
     {
+        print(Level);
         //播放攻击动画
         m_Animator.SetTrigger("IsAttack");
         //具体实现交给子类

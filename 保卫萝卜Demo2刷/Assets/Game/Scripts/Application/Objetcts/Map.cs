@@ -55,7 +55,7 @@ public class Map : MonoBehaviour
     public Level Level { get { return m_Level; } }
     public List<GridInfo> GridsList { get { return m_GridsList; }}
     public List<GridInfo> PathsList { get { return m_PathesList; }}
-    public Rect GetRect { get { return new Rect(-m_MapWidth / 2, -m_MapHeight, m_MapWidth, m_MapHeight); } }
+    public Rect GetRect { get { return new Rect(-m_MapWidth / 2, -m_MapHeight, m_MapWidth * 1.4f, m_MapHeight * 1.4f); } }
     //获得怪物行走路径的世界坐标的集合
     public Vector3[] MonsterPath 
     {

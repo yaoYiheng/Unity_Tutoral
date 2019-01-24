@@ -50,7 +50,6 @@ public class UILost : View
 
     public void OnRestartClick()
     {
-        RoundModel roundModel = GetModel<RoundModel>();
 
         GameModel game = GetModel<GameModel>();
         // SendEvent(Const.E_StartLevel, new StartLevelArgs(){LevelIndex = game.PlayingLevelIndex});

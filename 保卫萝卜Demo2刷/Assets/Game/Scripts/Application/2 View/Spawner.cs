@@ -56,6 +56,7 @@ public class Spawner : View
     void Luobo_Dead(Role obj)
     {
         //print("spawner");
+
         Game.Instance.ObjectPool.UnSpawn(obj.gameObject);
         GameModel gameModel = GetModel<GameModel>();
         //发送事件

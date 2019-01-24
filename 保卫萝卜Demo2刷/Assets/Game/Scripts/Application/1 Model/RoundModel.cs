@@ -109,14 +109,15 @@ public class RoundModel : Model
             //开始出怪
             for (int k = 0; k < round.Count; k++)
             {
+
+                //出怪间隔
+                yield return new WaitForSeconds(MONSTER_INTERVIAL);
                 //创建事件参数
                 SpawnMonsterArgs ee = new SpawnMonsterArgs() { MonsterID = round.MonsterID };
                 //发布出怪事件
                 SendEvent(Consts.E_SpawnMonster, ee);
 
 
-                //出怪间隔
-                yield return new WaitForSeconds(MONSTER_INTERVIAL);
 
                 //加判断是否出完最后一波怪的最后一个
                 if (i == TotalRounds - 1 && k == round.Count - 1) m_IsCompleted = true;

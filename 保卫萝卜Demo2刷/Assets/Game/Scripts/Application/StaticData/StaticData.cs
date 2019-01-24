@@ -7,6 +7,7 @@ public class StaticData : Singleton<StaticData>
     Dictionary<int, MonsterInfo> m_Monsters = new Dictionary<int, MonsterInfo>();
     Dictionary<int, LuoboInfo> m_Luobo = new Dictionary<int, LuoboInfo>();
     Dictionary<int, TowerInfo> m_Towers = new Dictionary<int, TowerInfo>();
+    Dictionary<int, BulletInfo> m_Bullets = new Dictionary<int, BulletInfo>();
 
     protected override void Awake()
     {
@@ -14,17 +15,24 @@ public class StaticData : Singleton<StaticData>
         InitMonsters();
         InitLuobo();
         InitTower();
+        initBullet();
     }
 
     void InitTower()
     {
-        m_Towers.Add(0, new TowerInfo() { TowerID = 0, PrefabName = "Bottle", NormalName = "Bottle/Bottle01", DisableName = "Bottle/Bottle00", AttackArea = 4, SpeedRate = 2.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
+        m_Towers.Add(0, new TowerInfo() { TowerID = 0, PrefabName = "Bottle", NormalName = "Bottle/Bottle01", DisableName = "Bottle/Bottle00", AttackArea = 4, SpeedRate = 1.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
         m_Towers.Add(1, new TowerInfo() { TowerID = 1, PrefabName = "Fan",    NormalName = "Fan/Fan01",       DisableName = "Fan/Fan00",       AttackArea = 4, SpeedRate = 2.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
+    }
+
+    void initBullet()
+    {
+        m_Bullets.Add(0, new BulletInfo() { BulletID = 0, PrefabName = "BallBullet", AttackPoint = 1, BaseSpeed = 4 });
+        m_Bullets.Add(1, new BulletInfo() { BulletID = 1, PrefabName = "FanBullet", AttackPoint = 1, BaseSpeed = 2});
     }
 
     void InitMonsters()
     {
-        m_Monsters.Add(0, new MonsterInfo() { MonsterID = 0, HealthPoint = 1, MoveSpeed = 3, Gold = 30 });
+        m_Monsters.Add(0, new MonsterInfo() { MonsterID = 0, HealthPoint = 3, MoveSpeed = 3, Gold = 30 });
         m_Monsters.Add(1, new MonsterInfo() { MonsterID = 1, HealthPoint = 1, MoveSpeed = 1, Gold = 30 });
         m_Monsters.Add(2, new MonsterInfo() { MonsterID = 2, HealthPoint = 1, MoveSpeed = 1, Gold = 30 });
         m_Monsters.Add(3, new MonsterInfo() { MonsterID = 3, HealthPoint = 1, MoveSpeed = 1, Gold = 30 });
@@ -53,5 +61,10 @@ public class StaticData : Singleton<StaticData>
     public TowerInfo GetTowerInfo(int towerID)
     {
         return m_Towers[towerID];
+    }
+
+    public BulletInfo GetBulletInfo(int bulletid)
+    {
+        return m_Bullets[bulletid];
     }
 }
