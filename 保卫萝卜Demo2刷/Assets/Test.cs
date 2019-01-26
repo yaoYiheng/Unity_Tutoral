@@ -1,39 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Test : MonoBehaviour {
 
+    Image m_Image;
 
-    int m_Num;
-
-    public int Num
+    private void Start()
     {
-        get
-        {
-            return m_Num;
-        }
+        m_Image = GetComponent<Image>();
 
-        set
-        {
-            m_Num = value;
-        }
-    }
-
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            Num++;
-
-            print(Num * 2);
-        }
+        var sprites = Resources.LoadAll<Sprite>("Res/Roles/Fan/MainTown");
+        m_Image.sprite = sprites[44];
     }
 }

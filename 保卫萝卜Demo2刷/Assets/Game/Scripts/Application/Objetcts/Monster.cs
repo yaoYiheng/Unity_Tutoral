@@ -38,7 +38,7 @@ public class Monster : Role
     public void LoadPath(Vector3[] vector3s)
     {
         m_Path = vector3s;
-        print(vector3s.Length);
+
         MoveNext();
 
     }

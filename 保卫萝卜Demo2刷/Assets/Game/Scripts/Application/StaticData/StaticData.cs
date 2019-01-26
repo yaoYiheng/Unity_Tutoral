@@ -21,7 +21,7 @@ public class StaticData : Singleton<StaticData>
     void InitTower()
     {
         m_Towers.Add(0, new TowerInfo() { TowerID = 0, PrefabName = "Bottle", NormalName = "Bottle/Bottle01", DisableName = "Bottle/Bottle00", AttackArea = 4, SpeedRate = 1.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
-        m_Towers.Add(1, new TowerInfo() { TowerID = 1, PrefabName = "Fan",    NormalName = "Fan/Fan01",       DisableName = "Fan/Fan00",       AttackArea = 4, SpeedRate = 2.0f, BasePrice = 80, MaxLevel = 3, BulletID = 0 });
+        m_Towers.Add(1, new TowerInfo() { TowerID = 1, PrefabName = "Fan",    NormalName = "Fan/Fan01",       DisableName = "Fan/Fan00",       AttackArea = 4, SpeedRate = .5f, BasePrice = 80, MaxLevel = 3, BulletID = 1 });
     }
 
     void initBullet()

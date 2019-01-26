@@ -76,7 +76,7 @@ public abstract class Tower : ReusableObejct
         this.AttackRate = towerInfo.SpeedRate;
         this.BasePrice = towerInfo.BasePrice;
         this.TowerID = towerID;
-
+        this.BulletID = towerInfo.BulletID;
         this.MapRect = mapRect;
         this.GridInfo = gridInfo;
 
@@ -85,7 +85,7 @@ public abstract class Tower : ReusableObejct
 
     public virtual void Attack(Monster monster)
     {
-        print(Level);
+
         //播放攻击动画
         m_Animator.SetTrigger("IsAttack");
         //具体实现交给子类
