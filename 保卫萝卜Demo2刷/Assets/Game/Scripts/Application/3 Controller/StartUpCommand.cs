@@ -18,6 +18,10 @@ public class StartUpCommand : Controller
         RegisterController(Consts.E_CountDownCompleted, typeof(CoundDownCompleteCommand));
         RegisterController(Consts.E_EndLevel, typeof(EndLevelCommand));
         RegisterController(Consts.E_RestartRound, typeof(RestartRoundCommand));
+        RegisterController(Consts.E_UpgradeTower, typeof(UpgradeTowerCommand));
+        RegisterController(Consts.E_SellTower, typeof(SellTowerCommand));
+
+
         //数据的初始化
         GameModel game = GetModel<GameModel>();
         game.Init();

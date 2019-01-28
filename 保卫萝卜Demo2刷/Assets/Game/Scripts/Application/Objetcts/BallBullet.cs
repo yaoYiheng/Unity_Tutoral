@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BallBullet : Bullet
 {
-    Monster m_Target;
+    //Monster Target;
+
+    public Monster Target { get; set; }
     public Vector3 Direction { get; private set; }
 
-
+    Vector3 last;
     public void LoadBullet(int bulletID, int towerLevel, Rect mapRect, Monster target)
     {
         LoadData(bulletID, towerLevel, mapRect);
-         m_Target = target;
+         Target = target;
 
         //计算子弹前进的方向
-        Direction = (target.Position - this.transform.position).normalized;
+        Direction = (Target.Position - this.transform.position).normalized;
     }
 
 
@@ -23,12 +25,21 @@ public class BallBullet : Bullet
     {
         if (m_IsExploded) return;
 
-        if (m_Target!=null)
+        if (Target!=null)
         {
-            if(!m_Target.IsDead)
+            if(!Target.IsDead)
             {
                 //计算方向
-                Direction = (m_Target.Position - this.transform.position).normalized;
+                Direction = (Target.Position - this.transform.position).normalized;
+                last = Direction;
+            }
+            else
+            {
+                //死亡后子弹向最后的方向飞去.
+                Target = null;
+                transform.Translate(last * this.Speed * Time.deltaTime, Space.World);
+                //Explode();
+                return;
             }
 
             LookAt();
@@ -37,9 +48,9 @@ public class BallBullet : Bullet
 
             transform.Translate(Direction * this.Speed *Time.deltaTime, Space.World);
 
-            if (Vector3.Distance(m_Target.Position, transform.position) < 0.1f)
+            if (Vector3.Distance(Target.Position, transform.position) < 0.3f)
             {
-                m_Target.OnDamage(this.AttackPoint);
+                Target.OnDamage(this.AttackPoint);
                 Explode();
 
 
@@ -64,4 +75,5 @@ public class BallBullet : Bullet
 
         transform.eulerAngles = eularAngle;
     }
+
 }

@@ -41,7 +41,7 @@ public class UIWin : View
         this.gameObject.SetActive(true);
 
         RoundModel round = GetModel<RoundModel>();
-        UpdateRoundInfo(round.CurrentRoundIndex, round.TotalRounds);
+        UpdateRoundInfo(round.CurrentRoundIndex + 1, round.TotalRounds + 1);
 
     }
 

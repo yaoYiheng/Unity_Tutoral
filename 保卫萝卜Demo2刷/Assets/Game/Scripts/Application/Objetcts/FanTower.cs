@@ -6,6 +6,20 @@ public class FanTower : Tower
 {
     private int bulletCount = 4;
 
+    public override int Level
+    {
+        get
+        {
+            return base.Level;
+        }
+
+        set
+        {
+            base.Level = value;
+
+            BulletCount += Level;
+        }
+    }
     public int BulletCount
     {
         get
@@ -23,7 +37,7 @@ public class FanTower : Tower
     {
         base.Attack(monster);
 
-        BulletCount += Level;
+
         for (int i = 0; i < BulletCount; i++)
         {
 

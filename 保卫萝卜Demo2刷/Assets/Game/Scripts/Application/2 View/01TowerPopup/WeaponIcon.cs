@@ -25,7 +25,7 @@ public class WeaponIcon : MonoBehaviour
         m_TowerInfo = towerInfo;
         m_CreatPosition = creatPosition;
         //赋值
-        m_IsEnough = gameModel.Gold > towerInfo.BasePrice;
+        m_IsEnough = gameModel.Gold >= towerInfo.BasePrice;
 
         // 设置图标 /Res/Roles/Bottle/Bottle01
         string path =  "Res/Roles/" + (m_IsEnough ? towerInfo.NormalName : towerInfo.DisableName);
@@ -44,7 +44,7 @@ public class WeaponIcon : MonoBehaviour
     {
         
         //如果金币不足, 则无需发送事件
-        //if (!m_IsEnough) return;
+        if (!m_IsEnough) return;
 
         //事件参数需要由上一级传入
         SpawnTowerArgs spawnTowerArgs = new SpawnTowerArgs() { TowerID = m_TowerInfo.TowerID, Position = m_CreatPosition };

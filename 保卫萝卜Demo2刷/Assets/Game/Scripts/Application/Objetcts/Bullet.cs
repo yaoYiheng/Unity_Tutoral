@@ -14,11 +14,18 @@ public abstract class Bullet : ReusableObejct
 
     #region 字段
     Animator m_Animator;
+    int m_Level;
     #endregion
 
     #region 属性
     public int BulletID { get; set; }
-    public int Level { get;  set; }
+    public int Level 
+    { 
+        get { return m_Level; }  
+
+        set{
+            m_Level = value;
+            transform.localScale = Vector3.one * (1 + 0.25f * m_Level);} }
     public int BaseSpeed { get; private set; }
     public int BaseAttackPoint { get; private set; }
 
@@ -28,7 +35,7 @@ public abstract class Bullet : ReusableObejct
 
     public Rect MapRect { get; set; }
 
-    public float DelayDestoryWait = 0.5f;
+    public float DelayDestoryWait = 0.1f;
     //子弹是否爆炸
     protected bool m_IsExploded;
 

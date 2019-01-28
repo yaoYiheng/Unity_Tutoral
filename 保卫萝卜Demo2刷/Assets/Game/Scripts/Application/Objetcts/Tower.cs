@@ -45,7 +45,7 @@ public abstract class Tower : ReusableObejct
     //设置当前等级
     //并且根据当前等级设置炮塔大小.
 
-    public int Level
+    public virtual int Level
     {
         get
         {

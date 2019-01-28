@@ -40,11 +40,11 @@ public class StaticData : Singleton<StaticData>
     }
     void InitLuoBo()
     {
-        m_Luobos.Add(0, new LuoboInfo(){LuoboID = 0, HealthPoint = 10});
+        m_Luobos.Add(0, new LuoboInfo(){LuoboID = 0, HealthPoint = 100});
     }
         void InitMosterInfo()
     {
-        m_Monsters.Add(0, new MonsterInfo(){MonsterID = 0, HealthPoint = 1, MoveSpeed = MONSTER_SPEED_ONE});
+        m_Monsters.Add(0, new MonsterInfo(){MonsterID = 0, HealthPoint = 10, MoveSpeed = 8});
         m_Monsters.Add(1, new MonsterInfo(){MonsterID = 1, HealthPoint = 11, MoveSpeed = MONSTER_SPEED_ONE});
         m_Monsters.Add(2, new MonsterInfo(){MonsterID = 2, HealthPoint = 12, MoveSpeed = MONSTER_SPEED_ONE});
         m_Monsters.Add(3, new MonsterInfo(){MonsterID = 3, HealthPoint = 12, MoveSpeed = MONSTER_SPEED_ONE});

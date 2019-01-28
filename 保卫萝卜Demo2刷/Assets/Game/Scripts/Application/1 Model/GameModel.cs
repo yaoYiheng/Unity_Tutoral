@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class GameModel : Model
     #endregion
 
     #region 事件
+
     #endregion
 
     #region 字段
@@ -38,7 +40,18 @@ public class GameModel : Model
         }
     }
 
-    public int Gold { get { return m_Gold; }  set { m_Gold = value; } }
+    public int Gold 
+    { 
+        get{ return m_Gold; }
+
+        set 
+        { 
+            m_Gold = value; 
+
+
+        
+        }
+    }
 
     public bool IsPlaying { get { return m_IsPlaying; } set { m_IsPlaying = value; } }
     //游戏进度关卡
@@ -74,7 +87,8 @@ public class GameModel : Model
             m_Levels.Add(level);
         }
         //读取游戏当前进度
-        m_GameProgress = 4;//Saver.GetGameProgress();
+        //可以在此处修改游戏进度
+        m_GameProgress = Saver.GetGameProgress();
 
         IsInit = true;
     }
@@ -99,6 +113,13 @@ public class GameModel : Model
             m_GameProgress = Saver.GetGameProgress();
         }
         IsPlaying = false;
+    }
+    public void ClearProgress()
+    {
+        Saver.SetGameProgress(-1);
+        m_IsPlaying = false;
+        m_CurrentPlayingIndex = -1;
+        m_GameProgress = -1;
     }
     #endregion
 

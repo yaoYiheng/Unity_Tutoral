@@ -158,6 +158,7 @@ public class Monster : Role
         this.m_IsReached = false;
         this.m_MoveSpeed = 0;
         this.Reach = null;
+        this.CurrentHP = 0;
 
     }
     #endregion

@@ -46,6 +46,10 @@ public class BallBullet : Bullet
                 //重新计算
                 Direction = (Target.Position - transform.position).normalized;
             }
+            else
+            {
+                print(Direction);
+            }
 
             //朝向目标
             LookAt();

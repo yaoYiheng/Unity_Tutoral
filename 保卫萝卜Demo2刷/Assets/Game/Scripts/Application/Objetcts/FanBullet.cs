@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FanBullet : Bullet 
 {
-    public float RotateSpeed = 180.0f;
+    public float RotateSpeed = 360.0f;
     public Vector3 Direction { get; private set; }
 
     public void LoadBullet(int bulletId, int level, Rect mapRect, Vector3 direction)

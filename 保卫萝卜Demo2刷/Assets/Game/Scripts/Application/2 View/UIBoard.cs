@@ -26,7 +26,7 @@ public class UIBoard : View
     private Button m_ButtonSpeed2;
     private Button m_ButtonPause;
     private Button m_ButtonContinue;
-    private Button m_ButtonMenu;
+
 
     private bool m_IsPlaying = false;
 
@@ -160,7 +160,12 @@ public class UIBoard : View
         AttentionEventList.Add(Consts.E_EnterScene);
         AttentionEventList.Add(Consts.E_StartRound);
         AttentionEventList.Add(Consts.E_MonsterDead);
+        AttentionEventList.Add(Consts.E_SellTower);
+        AttentionEventList.Add(Consts.E_UpgradeTower);
+        AttentionEventList.Add(Consts.E_SpawnTower);
     }
+
+
     public override void HandleEvent(string eventName, object data = null)
     {
         switch (eventName)
@@ -189,6 +194,7 @@ public class UIBoard : View
 
 
                     GameModel game = GetModel<GameModel>();
+
                     InitGold(game);
                     GameSpeed = GameSpeed.SpeedOne;
 
@@ -202,6 +208,15 @@ public class UIBoard : View
             break;
 
             case Consts.E_MonsterDead:
+                UpdateGold();
+                break;
+            case Consts.E_SellTower:
+                UpdateGold();
+                break;
+            case Consts.E_UpgradeTower:
+                UpdateGold();
+                break;
+            case Consts.E_SpawnTower:
                 UpdateGold();
                 break;
             default:

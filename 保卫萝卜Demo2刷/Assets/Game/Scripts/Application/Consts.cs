@@ -29,6 +29,7 @@ public static class Consts
     public const string V_Lost = "V_Lost";
     public const string V_TowerPopup = "V_TowerPopup";
     public const string V_Menu = "V_Menu";
+    public const string V_Completed = "V_Completed";
 
     //控制器
 
@@ -63,6 +64,10 @@ public static class Consts
     public const string E_Suspend = "E_Suspend";
     public const string E_MenuShow = "E_MenuShow";
     public const string E_RestartRound = "E_RestartRound";
+
+    //升级炮塔事件
+    public const string E_UpgradeTower = "E_UpgradeTower"; //UpgradeToweArgs
+    public const string E_SellTower = "E_SellTower"; //SellTowerArgs
 }
 
 public enum GameSpeed

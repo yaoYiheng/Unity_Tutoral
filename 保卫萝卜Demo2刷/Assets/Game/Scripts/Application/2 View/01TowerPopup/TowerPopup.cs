@@ -65,6 +65,23 @@ public class TowerPopup : View
         SendEvent(Consts.E_SpawnTower, spawnTowerArgs);
 
     }
+
+    void ShowUpgradePanel(UpgradePanelArgs upgradePanelArgs)
+    {
+        GameModel gameModel = GetModel<GameModel>();
+        UpgradePanel.Show(upgradePanelArgs, gameModel);
+    }
+
+    void UpgradeTower(UpgradeToweArgs upgradeToweArgs)
+    {
+
+        SendEvent(Consts.E_UpgradeTower, upgradeToweArgs);
+    }
+
+    void SellTower(SellTowerArgs sellTowerArgs)
+    {
+        SendEvent(Consts.E_SellTower, sellTowerArgs);
+    }
     #endregion
 
     #region Unity回调
@@ -93,6 +110,8 @@ public class TowerPopup : View
 
                 break;
             case Consts.E_ShowUpgradePanel:
+                UpgradePanelArgs upgradePanelArgs = data as UpgradePanelArgs;
+                ShowUpgradePanel(upgradePanelArgs);
                 break;
             case Consts.E_HideAllPanels:
                 HideAllPanels();

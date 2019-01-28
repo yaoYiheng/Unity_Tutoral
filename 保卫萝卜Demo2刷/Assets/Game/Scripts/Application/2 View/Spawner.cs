@@ -86,7 +86,7 @@ public class Spawner : View
     }
     void SpawnTower(SpawnTowerArgs spawnTowerArgs)
     {
-        print("来?");
+
         //获取格子
         GridInfo gridInfo = m_Map.GetGridByPosition(spawnTowerArgs.Position);
         
@@ -98,7 +98,8 @@ public class Spawner : View
         tower.transform.position = spawnTowerArgs.Position;
 
         tower.LoadData(spawnTowerArgs.TowerID, gridInfo, m_Map.GetRect);
-
+        GameModel gameModel = GetModel<GameModel>();
+        gameModel.Gold -= tower.BasePrice;
         gridInfo.data = tower;
 
     }
@@ -129,7 +130,7 @@ public class Spawner : View
     // 需要添加金币
     void Monster_Dead(Role obj)
     {
-
+        Game.Instance.ObjectPool.UnSpawn(obj.gameObject);
         GameModel gameModel = GetModel<GameModel>();
 
         if(!m_Luobo.IsDead)
@@ -143,7 +144,7 @@ public class Spawner : View
 
         SendEvent(Consts.E_MonsterDead);
 
-        Game.Instance.ObjectPool.UnSpawn(obj.gameObject);
+
 
         //同时需要判断这个怪死了之后是否达成胜利的条件
         //场景中没怪物
@@ -168,12 +169,13 @@ public class Spawner : View
     {
         m_Luobo.OnDamage(1);
         obj.CurrentHP = 0;
+
     }
 
     //地图上的格子被点击的时候.
     void M_Map_OnGridClick(object sender, GridClickEventArgs e)
     {
-        print("点击");
+
         // 游戏未开始时, 不能相应点击
         GameModel gameModel = GetModel<GameModel>();
         if (!gameModel.IsPlaying) return;
@@ -210,7 +212,11 @@ public class Spawner : View
         //如果给点击的格子已有数据, 则发送升级炮塔的消息
         else
         {
-            print("来这里?");
+            SendEvent(Consts.E_ShowUpgradePanel, new UpgradePanelArgs()
+            {
+                Position = m_Map.GetGridPosition(e.GridInfo),
+                Tower = e.GridInfo.data as Tower
+            });
         }
        
 
